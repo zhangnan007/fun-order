@@ -1,0 +1,35 @@
+<view class="container">
+
+  <view class="body-top">
+    <swiper indicator-dots="true"
+        autoplay="true" interval="2000" duration="500">
+        <block wx:for="{{banners}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item">
+              <image class="img-banner" src="{{item.img}}"/>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+
+  <!-- style="background: url(../img/home-bottom-background.jpg) no-repeat; -->
+   <view class="body-bottom" > 
+      <view class="take-type">
+      <navigator class="take-type" hover-class="none" url="../chooseShop/chooseShop">
+        <button type="primary">外卖</button>
+      </navigator>
+      </view>
+      <view class="take-type">
+      <navigator class="take-type" hover-class="none" url="../chooseShop/chooseShop">
+        <button type="primary">外带</button>
+      </navigator>
+      </view>
+      <view class="take-type">
+      <navigator class="take-type" hover-class="none" url="../chooseShop/chooseShop">
+        <button type="primary">堂食</button>
+      </navigator>
+      </view>
+  </view>
+
+</view>

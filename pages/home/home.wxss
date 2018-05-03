@@ -1,0 +1,36 @@
+.container{
+  position:absolute;
+  flex-direction:column;
+  width: 100%; 
+  height: 100%;
+  font-size:32rpx;
+}
+.body-top{
+  position:absolute;
+  height: 60%;
+  width: 100%;
+}
+.body-top > swiper{
+  width: 100%; 
+  height: 100%; 
+}
+.img-banner{
+  width: 100%;
+  height: 1000rpx;
+}
+.body-bottom{
+  position: relative;
+  width: 100%;
+  height: 40%;
+  top: 60%;
+  background: #DFDFDF;
+}
+.take-type{
+  height: 150rpx;
+}
+.take-type > button{
+  position:relative;
+  top:30%;
+  height:100rpx;
+  width:80%;
+}

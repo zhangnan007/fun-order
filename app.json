@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/searchShop/searchShop",
+    "pages/home/home"
+  ],
+  "window":{
+    "navigationBarTitleText": "自助点餐",
+    "navigationBarTextStyle":"white",
+    "navigationBarBackgroundColor": "#000000"
+  }
+}
