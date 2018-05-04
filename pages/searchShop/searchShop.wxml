@@ -7,11 +7,40 @@
     <button class="search-button">搜索</button>
   </view>
   <view class='boby-middle'>
-
-
+    <view class="swiper-tab">
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap='switchTabTitle'>附近餐厅({{nearNum}})</view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap='switchTabTitle'>收藏的餐厅({{collectNum}})</view>
+    </view>
+    <swiper current="{{currentTab}}" class="swiper-box" bindchange='tabOnChange'>
+      <swiper-item>
+        <scroll-view class="shop-list-container" scroll-y="true">
+          <radio-group>
+          <label wx:for="{{shops}}">
+            <view class="shop-list-view"> 
+              <!--单选框 -->
+              <radio class="shop-radio" checked="{{item.checked}}" ></radio>
+              <!--地址-->
+              <view class="shop-list-right-view">
+                <view>
+                  <text>{{item.address}}</text>
+                  <text>{{item.distance}}</text>
+                </view>
+                <text>{{item.fullAddress}}</text>
+              </view>
+              <!-- 收藏 -->
+              <!-- <icon src="{{item.collectSrc}}"></icon> -->
+            </view>
+          </label>
+        </radio-group>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <!-- <radio-group></radio-group> -->
+        <!-- <view>收藏的餐厅1</view> -->
+      </swiper-item>
+    </swiper>
   </view>
   <view class='boby-bottom'>
-
-
+  
   </view>
 </view>

@@ -18,14 +18,14 @@
 .boby-middle{
   position:absolute;
   top: 10%;
-  height: 50%;
+  height: 60%;
   width: 100%;
-  background: blue;
+  background: white;
 }
 .boby-bottom{
   position:absolute;
-  top: 60%;
-  height: 40%;
+  top: 70%;
+  height: 30%;
   width: 100%;
   background: green;
 }
@@ -60,3 +60,36 @@
   margin-left: 2%;
   margin-right: 2%;
 }
+.swiper-tab{
+  width: 100%;
+  height: 11%;
+  text-align: center;
+  line-height: 215%; 
+}
+.swiper-tab-list{  
+  font-size: 100%;  
+  display: inline-block;  
+  width: 50%;
+  border-bottom: 2rpx solid #D3D3D3;
+} 
+.on{
+  border-bottom: 5rpx solid red;
+}
+.swiper-box{
+  width: 100%;
+  height: 89%;
+}
+.shop-list-container{
+  width: 100%;
+  height: 100%;
+}
+radio-group{
+  width: 100%;
+  height: 100%;
+}
+.shop-list-view{
+  border-bottom: 2rpx solid #D3D3D3;
+  width: 100%;
+  height: 33.3%;
+}
+
