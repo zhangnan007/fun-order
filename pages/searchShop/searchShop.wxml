@@ -18,7 +18,9 @@
           <label wx:for="{{shops}}">
             <view class="shop-list-view"> 
               <!--单选框 -->
-              <radio class="shop-radio" checked="{{item.checked}}" ></radio>
+              <view class="shop-radio-view">
+                <radio class="shop-radio" checked="{{item.checked}}" ></radio>
+              </view>
               <!--地址-->
               <view class="shop-list-right-view">
                 <view>

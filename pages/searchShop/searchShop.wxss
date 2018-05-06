@@ -89,7 +89,22 @@ radio-group{
 }
 .shop-list-view{
   border-bottom: 2rpx solid #D3D3D3;
+  flex-direction:row;
+  display: flex;
   width: 100%;
   height: 33.3%;
 }
+.shop-radio-view{
+  width: 10%;
+  height: 100%;
+}
+.shop-radio{
+  margin-top: 120%;
+  margin-left: 20%;
+}
+.shop-list-right-view{
 
+  width: 90%;
+  height: 100%;
+  background: blue;
+}
