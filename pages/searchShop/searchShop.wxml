@@ -14,27 +14,27 @@
     <swiper current="{{currentTab}}" class="swiper-box" bindchange='tabOnChange'>
       <swiper-item>
         <scroll-view class="shop-list-container" scroll-y="true">
-          <radio-group>
+          <radio-group bindchange="shoplistChange">
           <label wx:for="{{shops}}">
             <view class="shop-list-view"> 
               <!--单选框 -->
               <view class="shop-radio-view">
-                <radio checked="{{item.checked}}" ></radio>
+                <radio color="red" value="{{index}}" checked='{{currentShop==index}}'></radio>
               </view>
               <!--地址-->
               <view class="shop-list-address-view">
                 <view class="shop-adress-top">
-                  <view class="shop-address">{{item.address}}</view>
-                  <view class="shop-distance">
+                  <view class="shop-address font-style {{currentShop==index?'shop-checked':''}}">{{item.address}}</view>
+                  <view class="shop-distance details-font-style {{currentShop==index?'shop-checked':''}}">
                     {{item.distance}}
                   </view>
                 </view>
-                <view class="shop-address-bottom">
+                <view class="shop-address-bottom details-font-style {{currentShop==index?'shop-checked':''}}">
                   {{item.fullAddress}}
                 </view>
               </view>
-              <view class="shop-collect-icon">
-                <image src="{{item.collectSrc}}"></image>
+              <view class="shop-collect-view">
+                <image catchtap='onClickCollectImg' id="{{index}}" src="{{item.isCollect==0?'../img/weishoucang.png':'../img/yishoucang.png'}}"></image>
               </view>
             </view>
           </label>
