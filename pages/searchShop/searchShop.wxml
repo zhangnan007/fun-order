@@ -19,18 +19,23 @@
             <view class="shop-list-view"> 
               <!--单选框 -->
               <view class="shop-radio-view">
-                <radio class="shop-radio" checked="{{item.checked}}" ></radio>
+                <radio checked="{{item.checked}}" ></radio>
               </view>
               <!--地址-->
-              <view class="shop-list-right-view">
-                <view>
-                  <text>{{item.address}}</text>
-                  <text>{{item.distance}}</text>
+              <view class="shop-list-address-view">
+                <view class="shop-adress-top">
+                  <view class="shop-address">{{item.address}}</view>
+                  <view class="shop-distance">
+                    {{item.distance}}
+                  </view>
                 </view>
-                <text>{{item.fullAddress}}</text>
+                <view class="shop-address-bottom">
+                  {{item.fullAddress}}
+                </view>
               </view>
-              <!-- 收藏 -->
-              <!-- <icon src="{{item.collectSrc}}"></icon> -->
+              <view class="shop-collect-icon">
+                <image src="{{item.collectSrc}}"></image>
+              </view>
             </view>
           </label>
         </radio-group>
