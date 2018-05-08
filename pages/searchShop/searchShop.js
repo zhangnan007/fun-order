@@ -34,6 +34,17 @@ Page({
         distance: "303千米",
         fullAddress: "北京市西城区新街口北大街1号1号楼一层",
         isCollect: 0
+    }],
+    collectShops:[{
+      address: "西环嘉茂",
+      distance: "117米",
+      fullAddress: "北京市西城区西直门外大街1号西区商业'凯德MALL'嘉茂购物中心位于西环广场地下一层",
+      isCollect: 1
+    },{
+        address: "西直门嘉茂",
+        distance: "120米",
+        fullAddress: "北京市西城区西直门南大街甲15-6",
+        isCollect: 1
     }]
   },
   /**
@@ -85,7 +96,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this;
+    var nearSize = that.data.shops.length;
+    var collectSize = that.data.collectShops.length;
+    that.setData({
+      nearNum: nearSize,
+      collectNum: collectSize
+    });
   },
 
   /**

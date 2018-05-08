@@ -1,3 +1,4 @@
+<import src="./shopList.wxml" />
 <view class='container'>
   <view class='boby-top'>
     <view class="search-left">
@@ -41,13 +42,57 @@
         </radio-group>
         </scroll-view>
       </swiper-item>
+      <!-- 收藏的餐厅 -->
       <swiper-item>
-        <!-- <radio-group></radio-group> -->
-        <!-- <view>收藏的餐厅1</view> -->
+         <scroll-view class="shop-list-container" scroll-y="true">
+          <radio-group bindchange="shoplistChange">
+          <label wx:for="{{collectShops}}">
+            <view class="shop-list-view"> 
+              <!--单选框 -->
+              <view class="shop-radio-view">
+                <radio color="red" value="{{index}}" checked='{{currentShop==index}}'></radio>
+              </view>
+              <!--地址-->
+              <view class="shop-list-address-view">
+                <view class="shop-adress-top">
+                  <view class="shop-address font-style {{currentShop==index?'shop-checked':''}}">{{item.address}}</view>
+                  <view class="shop-distance details-font-style {{currentShop==index?'shop-checked':''}}">
+                    {{item.distance}}
+                  </view>
+                </view>
+                <view class="shop-address-bottom details-font-style {{currentShop==index?'shop-checked':''}}">
+                  {{item.fullAddress}}
+                </view>
+              </view>
+              <view class="shop-collect-view">
+                <image catchtap='onClickCollectImg' id="{{index}}" src="{{item.isCollect==0?'../img/weishoucang.png':'../img/yishoucang.png'}}"></image>
+              </view>
+            </view>
+          </label>
+        </radio-group>
+        </scroll-view>     
       </swiper-item>
     </swiper>
   </view>
   <view class='boby-bottom'>
-  
+    <view class="dine-type-title">就餐方式</view>
+    <view class="dine-type">
+      <radio-group>
+        <view>
+          <radio>堂食(店内用餐)</radio>
+        </view>
+        <view>
+          <radio>自提(自己打包带走)</radio>
+        </view>
+        <view>
+          <radio>外卖(派送人员送餐到家)</radio>
+        </view>
+      </radio-group>
+    </view>
+    <view class="enter-menu">
+      <navigator hover-class="none" url="../chooseShop/chooseShop">
+        进入菜单
+      </navigator>
+    </view>
   </view>
 </view>
