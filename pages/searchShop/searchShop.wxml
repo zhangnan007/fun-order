@@ -2,7 +2,7 @@
   <view class='boby-top'>
     <view class="search-left">
       <icon class="search-icon" type="search" size="14" style="float:left;margin-right:20rpx;"></icon>
-      <input class="search-input" placeholder='搜索餐厅' focus="true" ></input>
+      <input class="search-input" placeholder='搜索餐厅' focus="false" ></input>
     </view>
     <button class="search-button">搜索</button>
   </view>
@@ -11,8 +11,7 @@
       <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" catchtap='switchTabTitle'>附近餐厅({{nearNum}})</view>
       <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" catchtap='switchTabTitle'>收藏的餐厅({{collectNum}})</view>
     </view>
-    <swiper current="{{currentTab}}" class="swiper-box" bindchange='tabOnChange'>
-      <swiper-item>
+      <view class="{{currentTab==0?'swiper-box ':''}}" style="display:{{currentTab==1?'none':''}}">
         <scroll-view class="shop-list-container" scroll-y="true">
           <radio-group bindchange="shoplistChange">
           <label wx:for="{{shops}}">
@@ -34,15 +33,14 @@
                 </view>
               </view>
               <view class="shop-collect-view">
-                <image catchtap='onClickCollectImg' id="{{index}}" src="{{item.isCollect==0?'../img/weishoucang.png':'../img/yishoucang.png'}}"></image>
+                <image catchtap='onClickNearImg' id="{{index}}" src="{{item.isCollect==0?'../img/weishoucang.png':'../img/yishoucang.png'}}"></image>
               </view>
             </view>
           </label>
         </radio-group>
         </scroll-view>
-      </swiper-item>
-      <!-- 收藏的餐厅 -->
-      <swiper-item>
+      </view>
+      <view id="collectShopsID" class="{{currentTab==1?'swiper-box':''}}" style="display:{{currentTab==0?'none':''}}">
          <scroll-view class="shop-list-container" scroll-y="true">
           <radio-group bindchange="shoplistChange">
           <label wx:for="{{collectShops}}">
@@ -70,8 +68,8 @@
           </label>
         </radio-group>
         </scroll-view>     
-      </swiper-item>
-    </swiper>
+      </view>
+    
   </view>
   <view class='boby-bottom'>
     <view class="dine-type-title">就餐方式</view>

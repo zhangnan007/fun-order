@@ -52,22 +52,13 @@ Page({
    */
   switchTabTitle:function(e){
     var that = this;
-    if (this.data.currentTab === e.target.dataset.current){
+    if (that.data.currentTab === e.target.dataset.current){
       return false;
     } else {
       that.setData({
         currentTab: e.target.dataset.current
       });
     }
-  },
-  /**
-   * 滑动切换选项卡
-   */
-  tabOnChange:function(e){
-    var that = this;
-    that.setData({
-      currentTab: e.detail.current
-    });
   },
   /**
    * 店铺列表单选切换事件
@@ -78,19 +69,22 @@ Page({
       currentShop: e.detail.value
     });
   },
+  onClickNearImg:function(e){
+    var that = this;
+    var index = e.currentTarget.id;
+    var shopDetial = that.data.shops[index];
+    shopDetial.isCollect = shopDetial.isCollect == 0 ? 1 : 0;
+    that.data.shops[index] = shopDetial;
+    that.setData({
+      currentShop: index,
+      shops: that.data.shops
+    });
+  },
   /**
    * 收藏店铺点击事件
    */
   onClickCollectImg:function(e){
-    var that = this;
-    var index = e.currentTarget.id;
-    var shopDetial = that.data.shops[index];
-    shopDetial.isCollect = shopDetial.isCollect==0?1:0;
-    that.data.shops[index] = shopDetial;
-    that.setData({
-      currentShop: index,
-      shops:that.data.shops
-    });
+
   },
   /**
    * 生命周期函数--监听页面加载
