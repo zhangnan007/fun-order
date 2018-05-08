@@ -1,5 +1,4 @@
-<import src="./shopList.wxml" />
-<view class='container'>
+<view class='container'  catchtouchmove='true'>
   <view class='boby-top'>
     <view class="search-left">
       <icon class="search-icon" type="search" size="14" style="float:left;margin-right:20rpx;"></icon>
@@ -78,14 +77,14 @@
     <view class="dine-type-title">就餐方式</view>
     <view class="dine-type">
       <radio-group>
-        <view>
-          <radio>堂食(店内用餐)</radio>
+        <view class="eat-in-view">
+          <radio color='red' checked="true">堂食(店内用餐)</radio>
         </view>
-        <view>
-          <radio>自提(自己打包带走)</radio>
+        <view class="pack-view">
+          <radio color='red'>自提(自己打包带走)</radio>
         </view>
-        <view>
-          <radio>外卖(派送人员送餐到家)</radio>
+        <view class="take-out-view">
+          <radio color='red'>外卖(派送人员送餐到家)</radio>
         </view>
       </radio-group>
     </view>
