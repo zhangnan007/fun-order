@@ -76,7 +76,6 @@ Page({
     shopDetial.isCollect = shopDetial.isCollect == 0 ? 1 : 0;
     that.data.shops[index] = shopDetial;
     that.setData({
-      currentShop: index,
       shops: that.data.shops
     });
   },
