@@ -79,10 +79,10 @@
           <radio color='red' checked="true">堂食(店内用餐)</radio>
         </view>
         <view class="pack-view">
-          <radio color='red'>自提(自己打包带走)</radio>
+          <radio color='red'>自提(打包带走)</radio>
         </view>
         <view class="take-out-view">
-          <radio color='red'>外卖(派送人员送餐到家)</radio>
+          <radio color='red'>外卖(送餐到家)</radio>
         </view>
       </radio-group>
     </view>
