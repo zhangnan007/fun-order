@@ -14,7 +14,7 @@
       <view class="{{currentTab==0?'swiper-box ':''}}" style="display:{{currentTab==1?'none':''}}">
         <scroll-view class="shop-list-container" scroll-y="true">
           <radio-group bindchange="shoplistChange">
-          <label wx:for="{{shops}}">
+          <label wx:for="{{shops}}" wx:key="{{fullAddress}}">
             <view class="shop-list-view"> 
               <!--单选框 -->
               <view class="shop-radio-view">
@@ -24,9 +24,7 @@
               <view class="shop-list-address-view">
                 <view class="shop-adress-top">
                   <view class="shop-address font-style {{currentShop==index?'shop-checked':''}}">{{item.address}}</view>
-                  <view class="shop-distance details-font-style {{currentShop==index?'shop-checked':''}}">
-                    {{item.distance}}
-                  </view>
+                  <view class="shop-distance details-font-style {{currentShop==index?'shop-checked':''}}">{{item.distance}}</view>
                 </view>
                 <view class="shop-address-bottom details-font-style {{currentShop==index?'shop-checked':''}}">
                   {{item.fullAddress}}
@@ -43,7 +41,7 @@
       <view id="collectShopsID" class="{{currentTab==1?'swiper-box':''}}" style="display:{{currentTab==0?'none':''}}">
          <scroll-view class="shop-list-container" scroll-y="true">
           <radio-group bindchange="shoplistChange">
-          <label wx:for="{{collectShops}}">
+          <label wx:for="{{collectShops}}" wx:key="{{fullAddress}}">
             <view class="shop-list-view"> 
               <!--单选框 -->
               <view class="shop-radio-view">

@@ -137,7 +137,7 @@ radio-group{
 }
 .shop-collect-view{
   width: 10%;
-  height: 80%; 
+  height: 100%; 
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -152,7 +152,7 @@ radio-group{
 }
 .shop-collect-view > image{
   width: 60%;
-  height: 50%;
+  height: 39%;
 }
 .shop-checked{
   color: red;
@@ -193,5 +193,5 @@ radio-group{
   display: flex;
   flex-direction: row;
   align-items:center;
-  padding-left: 10rpx; 
+  padding-left: 20rpx; 
 }

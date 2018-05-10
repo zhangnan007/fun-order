@@ -73,10 +73,15 @@ Page({
     var that = this;
     var index = e.currentTarget.id;
     var shopDetial = that.data.shops[index];
+    var newCollect = that.data.collectShops.push(shopDetial);
+    // var collectNums = newCollect.length;
     shopDetial.isCollect = shopDetial.isCollect == 0 ? 1 : 0;
     that.data.shops[index] = shopDetial;
+    var temp = that.data.collectShops;
     that.setData({
-      shops: that.data.shops
+      collectNum: newCollect,
+      shops: that.data.shops,
+      collectShops: temp
     });
   },
   /**
@@ -92,6 +97,7 @@ Page({
     var that = this;
     var nearSize = that.data.shops.length;
     var collectSize = that.data.collectShops.length;
+    console.log("near size: " + nearSize + ", collectSize: " + collectSize);
     that.setData({
       nearNum: nearSize,
       collectNum: collectSize
