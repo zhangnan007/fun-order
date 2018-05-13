@@ -1,4 +1,3 @@
-// pages/searchShop/searchShop.js
 Page({
 
   /**
@@ -9,6 +8,7 @@ Page({
     nearNum:10,
     collectNum:0,
     currentShop:0,
+    // isLoadingShow:flase,
     shops:[{
       address:"西环嘉茂",
       distance:"117米",
@@ -94,7 +94,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+    let that = this;
     var nearSize = that.data.shops.length;
     var collectSize = that.data.collectShops.length;
     console.log("near size: " + nearSize + ", collectSize: " + collectSize);
