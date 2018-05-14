@@ -7,30 +7,17 @@
 }
 .body-top{
   position:absolute;
-  height: 60%;
+  height: 23%;
   width: 100%;
-}
-.body-top > swiper{
-  width: 100%; 
-  height: 100%; 
 }
 .img-banner{
   width: 100%;
-  height: 1000rpx;
+  height: 100%;
 }
 .body-bottom{
   position: relative;
   width: 100%;
-  height: 40%;
-  top: 60%;
+  height: 77%;
+  top: 22%;
   background: #DFDFDF;
-}
-.take-type{
-  height: 150rpx;
-}
-.take-type > button{
-  position:relative;
-  top:30%;
-  height:100rpx;
-  width:80%;
 }

@@ -1,6 +1,7 @@
 {
   "pages":[
-    "pages/searchShop/searchShop"
+    "pages/menu/menu",
+    "pages/shop/shop"
   ],
   "window":{
     "navigationBarTitleText": "自助点餐",

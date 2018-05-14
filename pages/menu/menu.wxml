@@ -1,0 +1,18 @@
+<view class="container">
+
+  <view class="body-top">
+    <swiper indicator-dots="true"
+        autoplay="true" interval="2000" duration="500">
+        <block wx:for="{{banners}}" wx:key="*this">
+          <swiper-item>
+            <image class="img-banner" src="{{item.img}}"/>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
+
+   <view class="body-bottom" > 
+      
+  </view>
+
+</view>

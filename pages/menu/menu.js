@@ -7,17 +7,17 @@ Page({
   data: {
     banners: [{
       id: 3,
-      img: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+      img: 'http://www.kfc.com.cn/kfccda/UploadPic/HomePage/201704/20170424014405_11.jpg',
       name: '百亿巨惠任你抢'
     },
     {
       id: 1,
-      img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+      img: 'http://www.kfc.com.cn/kfccda/UploadPic/HomePage/201704/20170424014651_46.jpg',
       name: '告别午高峰'
     },
     {
       id: 2,
-      img: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
+      img: 'http://www.kfc.com.cn/kfccda/UploadPic/HomePage/201703/20170320121212_90.jpg',
       name: '金牌好店'
     }]
   },
