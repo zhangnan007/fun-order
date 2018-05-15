@@ -12,7 +12,13 @@
   </view>
 
    <view class="body-bottom" > 
-      
+      <view class="bottom-left">
+        <view class="menu-type"></view>
+        <view class="food-cart">
+          <image src="../img/cart.png"></image>
+        </view>
+      </view>
+      <view class="bottom-right"></view>
   </view>
 
 </view>

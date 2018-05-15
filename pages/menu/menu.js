@@ -26,7 +26,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    let that = this;
+    wx.showToast({
+      title: '加载中。。。',
+      icon: 'loading',
+      duration:0,
+      mask:true
+    })
+    // 发送请求
+    wx.request({
+      url: 'http://easy-mock.com/mock/5905d4597a878d73716e2c6b/kfc/kfc',
+      method:'GET',
+      data:{},
+      header:{
+        'Accept': 'application/json'
+      },
+      success:function(res){
+        console.log(res.data),
+        that.setData({
+          imgArray: res.data.navArray,
+          foodArray: res.data.foodArray
+        })
+      }, function(){
+        wx.hideToast();
+      }
+    })
   },
 
   /**
