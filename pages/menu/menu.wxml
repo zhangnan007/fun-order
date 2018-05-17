@@ -5,7 +5,7 @@
         autoplay="true" interval="2000" duration="500">
         <block wx:for="{{banners}}" wx:key="*this">
           <swiper-item>
-            <image class="img-banner" src="{{item.img}}"/>
+            <image class="img-banner" src="{{item}}"/>
           </swiper-item>
         </block>
       </swiper>
@@ -13,7 +13,14 @@
 
    <view class="body-bottom" > 
       <view class="bottom-left">
-        <view class="menu-type"></view>
+        <view class="food-type">
+          <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
+            <view wx:for='{{foodTypes}}' wx:key="*this" style="height:20%;width:100%">
+              <image class="food-types-img" style="height:60%;width:100%" mode="aspectFit" src='{{item.url}}'></image>
+              <view class="food-types-remark" style="height:40%;width:100%" >{{item.title}}</view> 
+            </view>         
+          </scroll-view>        
+        </view>
         <view class="food-cart">
           <image src="../img/cart.png"></image>
         </view>

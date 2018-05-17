@@ -1,25 +1,12 @@
-// pages/home/home.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    banners: [{
-      id: 3,
-      img: 'http://www.kfc.com.cn/kfccda/UploadPic/HomePage/201704/20170424014405_11.jpg',
-      name: '百亿巨惠任你抢'
-    },
-    {
-      id: 1,
-      img: 'http://www.kfc.com.cn/kfccda/UploadPic/HomePage/201704/20170424014651_46.jpg',
-      name: '告别午高峰'
-    },
-    {
-      id: 2,
-      img: 'http://www.kfc.com.cn/kfccda/UploadPic/HomePage/201703/20170320121212_90.jpg',
-      name: '金牌好店'
-    }]
+    banners: [],
+    foodTypes: [],
+    foods: []
   },
 
   /**
@@ -32,25 +19,48 @@ Page({
       icon: 'loading',
       duration:0,
       mask:true
+    });
+    // 获取banners图
+    wx.request({
+      url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/findBanners',
+      method:'POST',
+      header:{
+        'content-type': 'application/json' // 默认值
+      },
+      data:{
+        groupID:111
+      },
+      success:function(res){
+        that.setData({
+          banners: res.data.data,
+        });
+      },
+      fail:function(res){
+      }
     })
     // 发送请求
     wx.request({
-      url: 'http://easy-mock.com/mock/5905d4597a878d73716e2c6b/kfc/kfc',
-      method:'GET',
-      data:{},
+      url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/findShopMenu',
+      method:'POST',
+      data:{
+        groupID:11,
+        shopID:112
+      },
       header:{
         'Accept': 'application/json'
       },
       success:function(res){
-        console.log(res.data),
         that.setData({
-          imgArray: res.data.navArray,
-          foodArray: res.data.foodArray
-        })
-      }, function(){
+          foodTypes: res.data.data.foodTypes,
+          foods: res.data.data.foods
+        });
+      }, 
+      fail:function(){
+        // 提示获取菜品失败
+      },complete:function(){
         wx.hideToast();
       }
-    })
+    });
   },
 
   /**
