@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" catchtouchmove='true'>
 
   <view class="body-top">
     <swiper indicator-dots="true"
@@ -11,21 +11,27 @@
       </swiper>
   </view>
 
-   <view class="body-bottom" > 
-      <view class="bottom-left">
-        <view class="food-type">
-          <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
-            <view wx:for='{{foodTypes}}' wx:key="*this" style="height:20%;width:100%">
-              <image class="food-types-img" style="height:60%;width:100%" mode="aspectFit" src='{{item.url}}'></image>
-              <view class="food-types-remark" style="height:40%;width:100%" >{{item.title}}</view> 
-            </view>         
-          </scroll-view>        
-        </view>
-        <view class="food-cart">
-          <image src="../img/cart.png"></image>
-        </view>
+   <view class="body-middle" > 
+      <view class="middle-left">
+        <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
+          <view wx:for='{{foodTypes}}' wx:key="*this" style="height:20%;width:100%">
+            <image class="food-types-img" style="height:60%;width:100%" mode="aspectFit" src='{{item.url}}'></image>
+            <view class="food-types-remark" style="height:40%;width:100%" >{{item.title}}</view> 
+          </view>         
+        </scroll-view>
       </view>
-      <view class="bottom-right"></view>
+      <view class="middle-right"></view>
+  </view>
+  <view class="bottom-view">
+    <view class="cart-img">
+      <image class="food-cart-img" src="../img/cart.png"></image>
+    </view>
+    <view class="food-price">
+      <text>￥  {{totalPrice}}</text>
+    </view>
+    <view class="choose-done">
+      <text>选好了 ></text>
+    </view>
   </view>
 
 </view>

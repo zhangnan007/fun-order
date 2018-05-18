@@ -4,6 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    totalPrice:0,
     banners: [],
     foodTypes: [],
     foods: []
