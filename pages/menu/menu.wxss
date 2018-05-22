@@ -8,7 +8,7 @@
 }
 .body-top{
   position:absolute;
-  height: 25%;
+  height: 22%;
   width: 100%;
 }
 swiper,swiper-item,.img-banner{
@@ -19,14 +19,14 @@ swiper,swiper-item,.img-banner{
   position: relative;
   flex-direction: row;
   width: 100%;
-  height: 65%;
-  top: 25%;
+  height: 69%;
+  top: 22%;
 }
 .bottom-view{
   position: absolute;
   width: 100%;
-  height: 10%;
-  top: 90%;
+  height: 9%;
+  top: 91%;
   background-color: #e02d3f
 }
 .middle-left{
@@ -40,7 +40,6 @@ swiper,swiper-item,.img-banner{
   float: right; 
   height: 100%;
   width: 80%;
-  background: yellow;
 }
 .food-types-img{
   display: flex;

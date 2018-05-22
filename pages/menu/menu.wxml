@@ -20,12 +20,17 @@
           </view>         
         </scroll-view>
       </view>
-      <view>
-      
-      
-      
+      <view class="middle-right">
+         <!-- <scroll-view>
+          <label wx:for={{}}>
+            <view></view>
+            <label>
+              <view></view>
+            </label>
+          </label>
+        </scroll-view>  -->
       </view>
-  </view>
+   </view>
   <view class="bottom-view">
     <view class="cart-img">
       <image class="food-cart-img" src="../img/cart.png"></image>
