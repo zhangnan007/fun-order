@@ -20,7 +20,11 @@
           </view>         
         </scroll-view>
       </view>
-      <view class="middle-right"></view>
+      <view>
+      
+      
+      
+      </view>
   </view>
   <view class="bottom-view">
     <view class="cart-img">
