@@ -12,6 +12,7 @@
   </view>
 
    <view class="body-middle" > 
+      <!--菜品类型 start-->
       <view class="middle-left">
         <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
           <view wx:for='{{foodTypes}}' wx:key="*this" style="height:20%;width:100%">
@@ -20,16 +21,39 @@
           </view>         
         </scroll-view>
       </view>
+      <!--菜品类型 end-->
+      <!--菜品明细 start-->
       <view class="middle-right">
-         <!-- <scroll-view>
-          <label wx:for={{}}>
-            <view></view>
-            <label>
-              <view></view>
+          <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
+            <label wx:for='{{foods}}' wx:key="*this">
+              <view class="food-title">{{item.title}}</view>
+              <label wx:for='{{item.foodsIntro}}' wx:key="*this" wx:for-item="introItem">
+                <view class="food-item">
+                  <view class="food-intro-left">
+                    <image style="height:100%;width:100%;" mode="aspectFit" src="{{introItem.url}}" />
+                  </view>
+                  <!--菜品介绍文字显示区 start-->
+                  <view class="food-intro-right">
+                    <view class="food-name-view">{{introItem.name}}</view>
+                    <view class="food-price-view">
+                      <view class="price-symbol-view">￥</view>
+                      <view class="price-view">{{introItem.price}}</view>
+                    </view>
+                    <!--加减菜操作区start-->
+                    <view style="height:36%;width:95%;">
+                      <image class="food-reduce-image" mode="aspectFit" />
+                      <view class="food-num-view">{{foodNum}}</view>
+                      <image class="food-add-image" mode="aspectFit" />
+                    </view>
+                    <!--加减菜操作区 end-->
+                  </view>
+                  <!--菜品介绍文字显示区 end-->
+                </view>
+              </label>
             </label>
-          </label>
-        </scroll-view>  -->
+        </scroll-view>  
       </view>
+      <!--菜品明细 end-->
    </view>
   <view class="bottom-view">
     <view class="cart-img">

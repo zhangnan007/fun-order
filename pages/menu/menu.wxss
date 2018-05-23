@@ -34,7 +34,6 @@ swiper,swiper-item,.img-banner{
   height: 100%;
   width: 20%;
   background-color:#f5f0e9;
-  /* z-index:1; */
 }
 .middle-right{
   float: right; 
@@ -88,15 +87,87 @@ swiper,swiper-item,.img-banner{
   height: 100%;
   width: 20%;
   float: left;
-  /* position: relative; */
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   align-items:center;
 }
 .cart-img image{
   width: 46%;
   height: 50%;
-  /* padding-top: 33%;*/
   padding-left:7px; 
+}
+.food-title{
+  height:3%;
+  width:100%;
+  color:gray;
+  font-size:12px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+}
+.food-item{
+  height:20%;
+  width:100%;
+}
+.food-title,.food-item{
+  border-bottom:1px solid #d6d3d3;
+}
+.food-intro-left{
+  float: left;
+  width: 39%;
+  height: 100%;
+}
+.food-intro-right{
+  float: right;
+  width: 61%;
+  height: 100%;
+}
+.food-name-view{
+  width: 95%;
+  height: 25%;
+  opacity:.8;
+  font-weight:500;
+  font-size:15px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-end;
+}
+.food-price-view{
+  width: 95%;
+  height: 39%;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-end;
+  color:#e02d3f;
+}
+.price-symbol-view{
+  font-size: 13px;
+}
+.price-view{
+  font-size:28px;
+  font-weight:600;
+}
+/* .food-reduce-view,.food-num-view,.food-add-view{ */
+  /* height: 100%; */
+/* } */
+.food-reduce-view,.food-add-view{
+  height: 50%;
+  width: 10%;
+  font-size:16px;
+  color:#e02d3f;
+  border:1px solid #d6d3d3;
+  border-radius:37px;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+}
+.food-num-view{
+  width: 30%;
+}
+.food-add-view{
+  width: 30%;
 }

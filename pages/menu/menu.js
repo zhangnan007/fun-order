@@ -5,6 +5,7 @@ Page({
    */
   data: {
     totalPrice:0,
+    foodNum:0,
     banners: [],
     foodTypes: [],
     foods: []
