@@ -29,7 +29,7 @@
               <view class="food-title">{{item.title}}</view>
               <label wx:for='{{item.foodsIntro}}' wx:key="*this" wx:for-item="introItem">
                 <view class="food-item">
-                  <view class="food-intro-left">
+                  <view catchtap='showFoodDetail' class="food-intro-left">
                     <image style="height:100%;width:100%;" mode="aspectFit" src="{{introItem.url}}" />
                   </view>
                   <!--菜品介绍文字显示区 start-->
@@ -41,9 +41,10 @@
                     </view>
                     <!--加减菜操作区start-->
                     <view style="height:36%;width:95%;">
-                      <image class="food-reduce-image" mode="aspectFit" />
-                      <view class="food-num-view">{{foodNum}}</view>
-                      <image class="food-add-image" mode="aspectFit" />
+                      <image class="food-add-image" src="../img/add.png" mode="aspectFit" />
+
+                      <view class="food-num-view">{{foodNum}}</view> 
+                      <image class="food-reduce-image" src="../img/reduce.png" mode="aspectFit" />
                     </view>
                     <!--加减菜操作区 end-->
                   </view>

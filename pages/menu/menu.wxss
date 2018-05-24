@@ -171,3 +171,15 @@ swiper,swiper-item,.img-banner{
 .food-add-view{
   width: 30%;
 }
+.food-add-image,.food-num-view,.food-reduce-image{
+  width: 20%;
+  height: 90%;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: flex-end;
+}
+.food-num-view{
+  justify-content: center;
+}
