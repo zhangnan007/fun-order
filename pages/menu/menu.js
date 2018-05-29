@@ -6,9 +6,28 @@ Page({
   data: {
     totalPrice:0,
     foodNum:0,
+    shopCartCount:0,
     banners: [],
     foodTypes: [],
     foods: []
+  },
+  /**
+   * 菜品左侧菜品分类点击事件
+   */
+  foodTypeOnClick: function(event){
+    let that = this;
+    let index = event.currentTarget.id;
+    var tempFoodTypes = that.data.foodTypes;
+    for (var tempIndex in tempFoodTypes){
+      if (tempIndex == index){
+        tempFoodTypes[index].isChecked = true;
+      } else if (tempFoodTypes[tempIndex].isChecked){
+        tempFoodTypes[tempIndex].isChecked = false;
+      }
+    }
+    this.setData({
+      foodTypes: tempFoodTypes
+    });
   },
   showFoodDetail: function (event) {
     wx.showModal({

@@ -2,7 +2,7 @@
   <view class='boby-top'>
     <view class="search-left">
       <icon class="search-icon" type="search" size="14" style="float:left;margin-right:20rpx;"></icon>
-      <input class="search-input" placeholder='搜索餐厅' focus="false" ></input>
+      <input class="search-input" placeholder='搜索餐厅' focus="false" required=""/>
     </view>
     <button class="search-button">搜索</button>
   </view>

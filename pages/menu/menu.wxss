@@ -40,7 +40,34 @@ swiper,swiper-item,.img-banner{
   height: 100%;
   width: 80%;
 }
+.food-type-on{
+  background: white;
+}
+.food-type-top-view{
+  height:60%;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+}
 .food-types-img{
+  height:100%;
+  width:100%; 
+}
+.checked-food-types-img{
+  width:75%;
+}
+.checked-num-view{
+  float:right;
+  width:20%;
+  height:30%;
+  margin-right: 5%;
+  border-radius: 25px;
+  border:2px solid #e02d3f;
+  background-color: #e02d3f;
+  color:white;
+  font-size:16px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -150,9 +177,6 @@ swiper,swiper-item,.img-banner{
   font-size:28px;
   font-weight:600;
 }
-/* .food-reduce-view,.food-num-view,.food-add-view{ */
-  /* height: 100%; */
-/* } */
 .food-reduce-view,.food-add-view{
   height: 50%;
   width: 10%;
@@ -182,4 +206,16 @@ swiper,swiper-item,.img-banner{
 }
 .food-num-view{
   justify-content: center;
+}
+.shop-cart-count{
+  position: absolute;
+  height: 35%;
+  width: 5%;
+  top: 2px;
+  left: 10%;
+  font-size: 16px;
+  border-radius: 99px;
+  background-color: #ff7b0f;
+  color:#fff;
+  text-align:center;
 }
