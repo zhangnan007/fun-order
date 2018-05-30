@@ -16,13 +16,29 @@ Page({
    */
   foodTypeOnClick: function(event){
     let that = this;
-    let index = event.currentTarget.id;
+    let index = parseInt(event.currentTarget.id);
     var tempFoodTypes = that.data.foodTypes;
-    for (var tempIndex in tempFoodTypes){
-      if (tempIndex == index){
-        tempFoodTypes[index].isChecked = true;
-      } else if (tempFoodTypes[tempIndex].isChecked){
-        tempFoodTypes[tempIndex].isChecked = false;
+    for (var currIndex in tempFoodTypes){
+      // 当前元素
+      var item = tempFoodTypes[currIndex];
+      // 后一项元素下标
+      var afIndex = 1 + index;
+      // 前一项元素下标
+      var beIndex = currIndex === 0 ? 0 : index - 1;
+      // 设置备选元素前后节点border样式
+      if (beIndex == 0 && currIndex != afIndex && currIndex != beIndex){
+        item.isUBottom = false;
+        item.isUTop = false;
+      } else if (currIndex == afIndex){
+        item.isUTop = true;
+      } else if (currIndex == beIndex){
+        item.isUBottom = true;
+      }
+      // 设置被选元素样式
+      if (currIndex == index){
+        item.isChecked = true;
+      } else if (item.isChecked){
+        item.isChecked = false;
       }
     }
     this.setData({

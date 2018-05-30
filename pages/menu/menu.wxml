@@ -15,7 +15,7 @@
       <!--菜品类型 start-->
       <view class="middle-left">
         <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
-          <view wx:for='{{foodTypes}}' wx:key="*this" bindtap="foodTypeOnClick" style="height:20%;width:100%" id="{{index}}" class="{{item.isChecked==true?'food-type-on':''}}">
+          <view wx:for='{{foodTypes}}' wx:key="*this" bindtap="foodTypeOnClick" id="{{index}}" class="{{item.isChecked?'food-type-on':'food-type-off'}} {{item.isUTop?'after-item-top':''}} {{item.isUBottom?'before-item-bottom':''}}">
               <view class="food-type-top-view">
                 <image class="food-types-img {{item.checkNum > 0?'checked-food-types-img':''}}" mode="aspectFit" src='{{item.url}}' />
                 <block wx:if="{{item.checkNum > 0}}"> 
