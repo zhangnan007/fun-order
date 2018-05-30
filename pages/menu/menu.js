@@ -16,23 +16,26 @@ Page({
    */
   foodTypeOnClick: function(event){
     let that = this;
+    // 当前元素下标
     let index = parseInt(event.currentTarget.id);
+    // 后一项元素下标
+    var afIndex = 1 + index;
+    // 前一项元素下标
+    var beIndex = currIndex === 0 ? 0 : index - 1;
     var tempFoodTypes = that.data.foodTypes;
     for (var currIndex in tempFoodTypes){
       // 当前元素
       var item = tempFoodTypes[currIndex];
-      // 后一项元素下标
-      var afIndex = 1 + index;
-      // 前一项元素下标
-      var beIndex = currIndex === 0 ? 0 : index - 1;
       // 设置备选元素前后节点border样式
-      if (beIndex == 0 && currIndex != afIndex && currIndex != beIndex){
+      if (currIndex == beIndex){
+        item.isUBottom = true;
+        item.isUTop = false;
+      } else if (currIndex == afIndex) {
+        item.isUTop = true;
+        item.isUBottom = false;
+      } else {
         item.isUBottom = false;
         item.isUTop = false;
-      } else if (currIndex == afIndex){
-        item.isUTop = true;
-      } else if (currIndex == beIndex){
-        item.isUBottom = true;
       }
       // 设置被选元素样式
       if (currIndex == index){
