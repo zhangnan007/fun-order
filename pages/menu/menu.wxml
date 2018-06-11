@@ -1,66 +1,64 @@
-<view class="container" catchtouchmove='true'>
+<view class="container common-style" catchtouchmove='true'>
 
   <view class="body-top">
-    <swiper indicator-dots="true"
-        autoplay="true" interval="2000" duration="500">
-        <block wx:for="{{banners}}" wx:key="*this">
-          <swiper-item>
-            <image class="img-banner" src="{{item}}"/>
-          </swiper-item>
-        </block>
-      </swiper>
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500">
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <image class="img-banner" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
 
-   <view class="body-middle" > 
-      <!--菜品类型 start-->
-      <view class="middle-left">
-        <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
-          <view wx:for='{{foodTypes}}' wx:key="*this" bindtap="foodTypeOnClick" id="{{index}}" class="{{item.isChecked?'food-type-on':'food-type-off'}} {{item.isUTop?'after-item-top':''}} {{item.isUBottom?'before-item-bottom':''}}">
-              <view class="food-type-top-view">
-                <image class="food-types-img {{item.checkNum > 0?'checked-food-types-img':''}}" mode="aspectFit" src='{{item.url}}' />
-                <block wx:if="{{item.checkNum > 0}}"> 
-                   <view class="checked-num-view" id="{{index}}">{{item.checkNum}}</view> 
-                </block> 
+  <view class="body-middle">
+    <!--菜品类型 start-->
+    <view class="middle-left">
+      <scroll-view scroll-y="true" scroll-with-animation="true" scroll-into-view="{{currentFood}}" class="common-style">
+        <view wx:for='{{foodTypes}}' wx:key="*this" bindtap="foodTypeOnClick" id="food{{index}}" data-index="{{index}}" class="{{item.isChecked?'food-type-on':'food-type-off'}} {{item.isUTop?'after-item-top':''}} {{item.isUBottom?'before-item-bottom':''}}">
+          <view class="food-type-top-view">
+            <image class="food-types-img {{item.checkNum > 0?'checked-food-types-img':''}}" mode="aspectFit" src='{{item.url}}' />
+            <block wx:if="{{item.checkNum > 0}}">
+              <view class="checked-num-view" id="{{index}}">{{item.checkNum}}</view>
+            </block>
+          </view>
+          <view class="food-types-remark" style="height:40%;width:100%">{{item.title}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <!--菜品类型 end-->
+    <!--菜品明细 start-->
+    <view class="middle-right">
+      <scroll-view scroll-y="true" bindscroll="foodOnScroll" scroll-with-animation="true" scroll-into-view="{{currentFoodTitle}}" class="common-style">
+        <label wx:for='{{foods}}' wx:key="*this" id="foodTitle{{index}}">
+          <view class="food-title">{{item.title}}</view>
+          <label wx:for='{{item.foodsIntro}}' wx:key="*this" wx:for-item="introItem">
+            <view class="food-item">
+              <view catchtap='showFoodDetail' class="food-intro-left">
+                <image class="common-style" mode="aspectFit" src="{{introItem.url}}" />
               </view>
-              <view class="food-types-remark" style="height:40%;width:100%" >{{item.title}}</view>
-          </view>         
-        </scroll-view>
-      </view>
-      <!--菜品类型 end-->
-      <!--菜品明细 start-->
-      <view class="middle-right">
-          <scroll-view scroll-y="{{true}}" style="height:100%;width:100%">
-            <label wx:for='{{foods}}' wx:key="*this">
-              <view class="food-title">{{item.title}}</view>
-              <label wx:for='{{item.foodsIntro}}' wx:key="*this" wx:for-item="introItem">
-                <view class="food-item">
-                  <view catchtap='showFoodDetail' class="food-intro-left">
-                    <image style="height:100%;width:100%;" mode="aspectFit" src="{{introItem.url}}" />
-                  </view>
-                  <!--菜品介绍文字显示区 start-->
-                  <view class="food-intro-right">
-                    <view class="food-name-view">{{introItem.name}}</view>
-                    <view class="food-price-view">
-                      <view class="price-symbol-view">￥</view>
-                      <view class="price-view">{{introItem.price}}</view>
-                    </view>
-                    <!--加减菜操作区start-->
-                    <view style="height:36%;width:95%;">
-                      <image class="food-add-image" src="../img/add.png" mode="aspectFit" />
-
-                      <view class="food-num-view">{{foodNum}}</view> 
-                      <image class="food-reduce-image" src="../img/reduce.png" mode="aspectFit" />
-                    </view>
-                    <!--加减菜操作区 end-->
-                  </view>
-                  <!--菜品介绍文字显示区 end-->
+              <!--菜品介绍文字显示区 start-->
+              <view class="food-intro-right">
+                <view class="food-name-view">{{introItem.name}}</view>
+                <view class="food-price-view">
+                  <view class="price-symbol-view">￥</view>
+                  <view class="price-view">{{introItem.price}}</view>
                 </view>
-              </label>
-            </label>
-        </scroll-view>  
-      </view>
-      <!--菜品明细 end-->
-   </view>
+                <!--加减菜操作区start-->
+                <view style="height:36%;width:95%;">
+                  <image class="food-add-image" src="../img/add.png" mode="aspectFit" />
+                  <view class="food-num-view">{{foodNum}}</view>
+                  <image class="food-reduce-image" src="../img/reduce.png" mode="aspectFit" />
+                </view>
+                <!--加减菜操作区 end-->
+              </view>
+              <!--菜品介绍文字显示区 end-->
+            </view>
+          </label>
+        </label>
+      </scroll-view>
+    </view>
+    <!--菜品明细 end-->
+  </view>
   <view class="bottom-view">
     <view class="cart-img">
       <image class="food-cart-img" src="../img/cart.png"></image>
