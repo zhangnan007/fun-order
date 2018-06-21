@@ -233,3 +233,91 @@ swiper,swiper-item,.img-banner{
   color:#fff;
   text-align:center;
 }
+.food-detail-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  /* color: #fff; */
+}
+.food-detail-dialog {
+  overflow: hidden;
+  position: fixed; 
+  top: 10%;
+  bottom: 20%;
+  left: 10%;
+  right: 10%;
+  z-index: 9999;
+}
+.detail-dialog-top-view{
+  height: 87%;
+  width: 100%;
+  border-radius: 25rpx;
+}
+.detail-dialog-bottom-view{
+  height: 10%;
+  padding-top:3%;
+}
+.detail-dialog-bottom-view > image{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+}
+.food-description-top-view{
+  width: 100%;
+  height: 67%;
+}
+.food-description-middle-view{
+  width: 100%;
+  height: 21%;
+  background: white;
+}
+.food-description-bottom-view{
+  width: 100%;
+  height: 12%;
+  background: white;
+}
+.food-dialog-title,.food-dialog-taste,.food-dialog-intro-view{
+  width: 100%;
+  font-family: "微软雅黑";
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.food-dialog-title{
+  height: 40%;
+  font-weight:bold;
+}
+.food-dialog-taste,.food-dialog-intro-view{
+  height: 30%;
+  color: gray;
+}
+.food-dialog-title > text,.food-dialog-intro-view > text{
+  white-space: nowrap;  
+  overflow: hidden;  
+  text-overflow: ellipsis;  
+}
+.food-dialog-price,.food-dialog-food-num{
+  height: 100%;
+  width: 50%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.food-dialog-price-text{
+  font-size:28px;
+  font-weight:600;
+  color:#e02d3f;
+}
+.food-dialog-food-num{
+  justify-content: flex-end;
+}

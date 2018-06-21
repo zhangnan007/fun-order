@@ -1,14 +1,16 @@
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     currentFoodTitle:"foodTitle" + 0, // 当前选中菜品类型
     currentFood: "food" + 0, // 当前选中右侧菜品详情
+    showDetailDialog:false,
+    isMultiSpeci:false, // 菜品是否多规格
+    foodDetailImgUrl:'', // 菜品详情dialog显示的图片地址
     foodHeiCount: 0,// 右侧区域总高度
     totalPrice:0,
-    foodNum:0,
+    foodNum:{}, // 已选中菜品信息 key=菜品索引，value=数量
     shopCartCount:0,
     banners: [],
     foodTypes: [],
@@ -16,6 +18,45 @@ Page({
     foodsHeights:[] // 菜单右侧分类高度
   },
   /**
+   * 添加选中菜品
+   */
+  addFoodToCart:function(event){
+    var that = this;
+    var foodnum = that.data.foodNum;
+    var key = event.currentTarget.dataset.foodnumkey;
+    var val = foodnum[key];
+    if (val == null || typeof (val) == "undefined"){
+      foodnum[key] = 1;
+    } else {
+      foodnum[key] = Number(val + 1);
+    }
+    that.setData({
+      foodNum: foodnum
+    })
+  },
+  /**
+   * 减少选中菜品
+   */
+  subFoodToCart:function(event){
+    var that = this;
+    var foodnum = that.data.foodNum;
+    var key = event.currentTarget.dataset.foodnumkey;
+    var val = foodnum[key];
+    if (val == null || typeof (val) == "undefined") {
+      return false;
+    } else {
+      val = Number(val - 1);
+      if(val <= 0){
+        delete foodnum[key];
+      } else {
+        foodnum[key] = val;
+      }
+    }
+    that.setData({
+      foodNum: foodnum
+    })
+  },
+/**
  * 右侧菜单明细滚动事件
  */
   foodOnScroll: function (event) {
@@ -49,9 +90,7 @@ Page({
         checkedFoodTypeIndex = index;
         break;
       }
-    }
-    console.log("height: " + num + " scroll top: " + scrollTop);
-    console.log("checked index: " + checkedFoodTypeIndex);
+    };
     // 修改左侧菜品分类顶端位置
     that.setData({
       currentFood: "food" + checkedFoodTypeIndex
@@ -114,29 +153,32 @@ Page({
    * 展示菜品详情
    */
   showFoodDetail: function (event) {
-    wx.showModal({
-      title: '提示',
-      content: '这是一个模态弹窗',
-      success: function (res) {
-        if (res.confirm) {
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
+    var that = this;
+    if (!that.data.showDetailDialog){
+      that.setData({
+        foodDetailImgUrl: event.currentTarget.dataset.foodImg,
+        showDetailDialog: true
+      });
+    }
   },
+  /**
+   * 隐藏菜品详情dialog
+   */
+  hideDetail: function (event) {
+    var that = this;
+    that.setData({
+      showDetailDialog: false
+    });
+  },
+  /**
+   * 弹出框蒙层截断touchmove事件
+   */
+  preventTouchMove: function (event) {},
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this;
-    wx.showToast({
-      title: '加载中。。。',
-      icon: 'loading',
-      duration:0,
-      mask:true
-    });
     // 获取banners图
     wx.request({
       url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/findBanners',
@@ -171,6 +213,8 @@ Page({
           foodTypes: res.data.data.foodTypes,
           foods: res.data.data.foods
         });
+        // 调用修改菜单分类选中样式函数(默认选中)
+        that.updateLeftFoodTypeChecked(0);
       }, 
       fail:function(){
         // 提示获取菜品失败

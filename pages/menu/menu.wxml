@@ -31,9 +31,9 @@
       <scroll-view scroll-y="true" bindscroll="foodOnScroll" scroll-with-animation="true" scroll-into-view="{{currentFoodTitle}}" class="common-style">
         <label wx:for='{{foods}}' wx:key="*this" id="foodTitle{{index}}">
           <view class="food-title">{{item.title}}</view>
-          <label wx:for='{{item.foodsIntro}}' wx:key="*this" wx:for-item="introItem">
+          <label wx:for='{{item.foodsIntro}}' wx:key="*this" wx:for-item="introItem" wx:for-index="itemIndex">
             <view class="food-item">
-              <view catchtap='showFoodDetail' class="food-intro-left">
+              <view catchtap='showFoodDetail' data-food-img="{{introItem.url}}" class="food-intro-left">
                 <image class="common-style" mode="aspectFit" src="{{introItem.url}}" />
               </view>
               <!--菜品介绍文字显示区 start-->
@@ -45,9 +45,9 @@
                 </view>
                 <!--加减菜操作区start-->
                 <view style="height:36%;width:95%;">
-                  <image class="food-add-image" src="../img/add.png" mode="aspectFit" />
-                  <view class="food-num-view">{{foodNum}}</view>
-                  <image class="food-reduce-image" src="../img/reduce.png" mode="aspectFit" />
+                  <image class="food-add-image" src="../img/add.png" catchtap='addFoodToCart' data-foodNumKey="{{index + '_' + itemIndex}}" mode="aspectFit" />
+                  <view class="food-num-view">{{foodNum[index + '_' + itemIndex]}}</view>
+                  <image class="food-reduce-image" src="../img/reduce.png" catchtap='subFoodToCart' wx:if="{{foodNum[index + '_' + itemIndex] > 0}}" data-foodNumKey="{{index + '_' + itemIndex}}" mode="aspectFit" />
                 </view>
                 <!--加减菜操作区 end-->
               </view>
@@ -71,5 +71,51 @@
       <text>选好了 ></text>
     </view>
   </view>
+
+<!--以下为隐藏区域-->
+<!--右侧菜品明细自定义弹出层start-->
+<!--背景模态承载容器 start-->
+<view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showDetailDialog}}"></view>
+<!--背景模态承载容器 end-->
+<!--自定义弹出层start-->
+<view class="food-detail-dialog" wx:if="{{showDetailDialog}}">
+  <!-- 弹出层内容 -->
+  <view class="detail-dialog-top-view">
+    <!--菜品图片展示区域-->
+    <view class='food-description-top-view'>
+      <image src='{{foodDetailImgUrl}}' mode="scaleToFill" style="width:100%;height:100%;" />
+    </view>
+    <!--菜品文字说明区域-->
+    <view class='food-description-middle-view'>
+      <view class='food-dialog-title'>
+        <text decode="true">&nbsp;&nbsp;菜品名称+菜品名称+菜品名称+菜品名称+菜品名称+菜品名称+菜品名称</text>
+      </view>
+      <view class='food-dialog-taste'>
+        <text decode="true">&nbsp;&nbsp;变态辣</text>
+      </view>
+      <view class='food-dialog-intro-view'>
+        <text decode="true">&nbsp;&nbsp;炸的金黄的三角豆泡加上调制高汤冒着清纯香老北京的味道</text>
+      </view>
+    </view>
+    <!--菜品价格区域-->
+    <view class='food-description-bottom-view'>
+      <view class="food-dialog-price">
+        <text style="color:#e02d3f;" decode='true'>&nbsp;&nbsp;￥</text><text class="food-dialog-price-text" decode="true">22.75</text>
+      </view>
+      <view wx:if="{{!isMultiSpeci}}" class='food-dialog-food-num'>
+        <text decode="true">加减菜数量&nbsp;&nbsp;</text>
+      </view>
+      <view wx:if="{{isMultiSpeci}}" class='food-dialog-food-num'>
+        <text decode="true">选规格&nbsp;&nbsp;</text>
+      </view>
+    </view>
+  </view>
+  <!-- 弹出层底部关闭icon -->
+  <view class="detail-dialog-bottom-view"> 
+    <image bindtap="hideDetail" src='../img/close.png' mode="aspectFit" />
+  </view> 
+</view>
+<!--自定义弹出层end-->
+<!--右侧菜品明细自定义弹出层end-->
 
 </view>
