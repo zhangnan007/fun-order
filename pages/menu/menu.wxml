@@ -60,9 +60,9 @@
     <!--菜品明细 end-->
   </view>
   <view class="bottom-view">
-    <view class="cart-img">
+    <view catchtap='showCartPage' class="cart-img">
       <image class="food-cart-img" src="../img/cart.png"></image>
-      <view class="shop-cart-count">{{shopCartCount}}</view>
+      <view animation="{{animation}}" class="shop-cart-count">{{cartNum}}</view>
     </view>
     <view class="food-price">
       <text>￥  {{totalPrice}}</text>
@@ -75,7 +75,7 @@
 <!--以下为隐藏区域-->
 <!--右侧菜品明细自定义弹出层start-->
 <!--背景模态承载容器 start-->
-<view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showDetailDialog}}"></view>
+<view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
 <!--背景模态承载容器 end-->
 <!--自定义弹出层start-->
 <view class="food-detail-dialog" wx:if="{{showDetailDialog}}">

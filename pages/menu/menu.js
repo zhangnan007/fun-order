@@ -3,19 +3,27 @@ Page({
    * 页面的初始数据
    */
   data: {
+    animation:{}, // 加减菜品购物车数量动画容器
     currentFoodTitle:"foodTitle" + 0, // 当前选中菜品类型
     currentFood: "food" + 0, // 当前选中右侧菜品详情
-    showDetailDialog:false,
+    showDetailDialog:false, // 菜品详情dialog控制器
+    showModal:false, // 模态背景层控制器
     isMultiSpeci:false, // 菜品是否多规格
     foodDetailImgUrl:'', // 菜品详情dialog显示的图片地址
     foodHeiCount: 0,// 右侧区域总高度
     totalPrice:0,
     foodNum:{}, // 已选中菜品信息 key=菜品索引，value=数量
-    shopCartCount:0,
+    cartNum:0, // 购物车中菜品数量
     banners: [],
     foodTypes: [],
     foods: [],
     foodsHeights:[] // 菜单右侧分类高度
+  },
+  /**
+   * 显示购物车管理页
+   */
+  showCartPage:function(event){
+
   },
   /**
    * 添加选中菜品
@@ -23,6 +31,7 @@ Page({
   addFoodToCart:function(event){
     var that = this;
     var foodnum = that.data.foodNum;
+    var cartCount = that.data.cartNum;
     var key = event.currentTarget.dataset.foodnumkey;
     var val = foodnum[key];
     if (val == null || typeof (val) == "undefined"){
@@ -30,16 +39,21 @@ Page({
     } else {
       foodnum[key] = Number(val + 1);
     }
+    // 开始动画
+    this.animation.scale(1.3).step().scale(1).step();
     that.setData({
-      foodNum: foodnum
+      foodNum: foodnum,
+      cartNum: Number(cartCount + 1),
+      animation: this.animation.export()
     })
   },
   /**
-   * 减少选中菜品
+   * 删减选中菜品
    */
   subFoodToCart:function(event){
     var that = this;
     var foodnum = that.data.foodNum;
+    var cartCount = that.data.cartNum;
     var key = event.currentTarget.dataset.foodnumkey;
     var val = foodnum[key];
     if (val == null || typeof (val) == "undefined") {
@@ -53,7 +67,8 @@ Page({
       }
     }
     that.setData({
-      foodNum: foodnum
+      foodNum: foodnum,
+      cartNum: Number(cartCount - 1)
     })
   },
 /**
@@ -157,7 +172,8 @@ Page({
     if (!that.data.showDetailDialog){
       that.setData({
         foodDetailImgUrl: event.currentTarget.dataset.foodImg,
-        showDetailDialog: true
+        showDetailDialog: true,
+        showModal:true
       });
     }
   },
@@ -167,7 +183,8 @@ Page({
   hideDetail: function (event) {
     var that = this;
     that.setData({
-      showDetailDialog: false
+      showDetailDialog: false,
+      showModal:false
     });
   },
   /**
@@ -178,6 +195,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.animation = wx.createAnimation({
+      duration: 500
+    });
     let that = this;
     // 获取banners图
     wx.request({
