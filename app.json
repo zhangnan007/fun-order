@@ -1,7 +1,9 @@
 {
   "pages":[
-    "pages/menu/menu",
-    "pages/shop/shop"
+    "pages/shop/shop",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/menu/menu"
   ],
   "window":{
     "navigationBarTitleText": "自助点餐",
@@ -9,5 +11,31 @@
     "navigationBarBackgroundColor": "#000000",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
-  }
+  },
+    "tabBar": {
+      "color": "#D3D3D3",
+      "selectedColor": "#d81e06",
+      "backgroundColor": "#FFFAFA",
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/shop/shop",
+          "text": "首页",
+          "iconPath": "pages/img/tabBar/home.png",
+          "selectedIconPath": "pages/img/tabBar/homed.png"
+        },
+        {
+          "pagePath": "pages/order/order",
+          "text": "订单",
+          "iconPath": "pages/img/tabBar/order.png",
+          "selectedIconPath": "pages/img/tabBar/ordered.png"
+        },
+        {
+          "pagePath": "pages/my/my",
+          "text": "我的",
+          "iconPath": "pages/img/tabBar/my.png",
+          "selectedIconPath": "pages/img/tabBar/showMy.png"
+        }
+      ]
+    }
 }
