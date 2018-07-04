@@ -1,0 +1,165 @@
+.common-style {
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  flex-direction: column;
+  font-size: 32rpx;
+  letter-spacing:1px;
+  overflow-y: hidden;
+  background: #d3d3d3;
+}
+
+.top, .middle, .bottom {
+  width: 100%;
+}
+
+.top {
+  height: 25%;
+}
+
+.middle {
+  margin-top: 5%;
+  height: 40%;
+}
+
+.bottom {
+  position: absolute;
+  top: 68%;
+  height: 32%;
+  background: white;
+}
+
+.top-search-view {
+  width: 100%;
+  height: 20%;
+  background: black;
+}
+
+.top-search {
+  width: 70%;
+  height: 88%;
+  background: white;
+  border-radius: 25px;
+}
+
+.top-banner {
+  height: 96%;
+  width: 100%;
+}
+
+.scan, .take-out {
+  float: left;
+  width: 49%;
+}
+
+.packing, .reserve {
+  float: right;
+  width: 50%;
+}
+
+.scan {
+  height: 47%;
+  padding-bottom: 1%;
+}
+
+.take-out {
+  height: 49%;
+}
+
+.packing {
+  height: 47%;
+  padding-bottom: 1%;
+}
+
+.reserve {
+  height: 49%;
+}
+
+.near-shop-title {
+  height: 15%;
+  width: 100%;
+  color: #d3d3d3;
+  font-size: 19px;
+}
+
+.near-shops-view {
+  height: 85%;
+  width: 100%;
+}
+
+.shop-item-view {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 10rpx;
+}
+
+.shop-logo {
+  float: left;
+  height: 100%;
+  width: 30%;
+}
+
+.shop-right-view {
+  float: right;
+  height: 100%;
+  width: 68%;
+  padding-left: 2%;
+}
+
+.right-top {
+  width: 100%;
+  height: 40%;
+}
+
+.shop-dining-type {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shop-address {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.shop-name {
+  width: 60%;
+  height: 100%;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.shop-distance {
+  width: 35%;
+  height: 100%;
+  float: right;
+  color: #d3d3d3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 5%;
+}

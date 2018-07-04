@@ -1,0 +1,72 @@
+<view class="container common-style" catchtouchmove='true'>
+  <!--顶部容器 -->
+  <view class='top'>
+    <!--搜索餐厅 start-->
+    <view class='top-search-view center'>
+      <view class='top-search center'>
+        <!--搜索icon-->
+        <icon type="search" size="16" />
+        <text decode="true">&nbsp;&nbsp;搜索餐厅名称</text>
+      </view>
+    </view>
+    <!--搜索餐厅 end-->
+    <!--banner start-->
+    <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500">
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <image class="top-banner" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!--banner end-->
+  </view>
+
+  <!--中部容器-->
+  <view class='middle'>
+    <!--就餐类型 start-->
+    <!--骚码-->
+    <image class="scan" src='../img/home/scanFood.png' />
+    <!--到店自提-->
+    <image class='packing' src='../img/home/packingBelt.png' />
+    <!--外卖-->
+    <image class='take-out' src='../img/home/takeOut.png' />
+    <!--预定-->
+    <image class='reserve' src='../img/home/reserve.png' />
+    <!--就餐类型 end-->
+  </view>
+
+  <!--底部容器-->
+  <view class='bottom'>
+    <view class='near-shop-title center'>———
+      <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;附近餐厅&nbsp;&nbsp;&nbsp;&nbsp;</text>———
+    </view>
+    <!--餐厅列表 start-->
+    <view class='near-shops-view'>
+      <scroll-view scroll-y="true" class="common-style">
+        <label wx:for='{{nearShops}}' wx:key="*this">
+          <view class='shop-item-view'>
+            <!--门店logo-->
+            <image class='shop-logo center' src='{{item.shopLogo}}' />
+            <!--列表右侧-->
+            <view class='shop-right-view'>
+              <view class='right-top'>
+                <!--门店名称-->
+                <view class='shop-name'>{{item.shopName}}</view>
+                <!--门店距离-->
+                <view class='shop-distance'>{{item.distance}}</view>
+              </view>
+              <!--门店支持就餐类型-->
+              <view class='shop-dining-type'>{{item.diningType}}</view>
+              <!--门店地址-->
+              <view class='shop-address'>{{item.address}}</view>
+            </view>
+          </view>
+        </label>
+      </scroll-view>
+
+    </view>
+    <!--餐厅列表 end-->
+  </view>
+
+
+</view>

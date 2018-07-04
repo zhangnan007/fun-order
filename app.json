@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/shop/shop",
+    "pages/index/index",
     "pages/order/order",
     "pages/my/my",
     "pages/menu/menu"
@@ -19,7 +19,7 @@
       "borderStyle": "white",
       "list": [
         {
-          "pagePath": "pages/shop/shop",
+          "pagePath": "pages/index/index",
           "text": "首页",
           "iconPath": "pages/img/tabBar/home.png",
           "selectedIconPath": "pages/img/tabBar/homed.png"
