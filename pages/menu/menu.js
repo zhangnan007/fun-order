@@ -3,6 +3,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    groupId:0, //集团ID
+    shopId:0, //店铺ID
     animation:{}, // 加减菜品购物车数量动画容器
     currentFoodTitle:"foodTitle" + 0, // 当前选中菜品类型
     currentFood: "food" + 0, // 当前选中右侧菜品详情
@@ -195,6 +197,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.groupId);
+    this.setData({
+      groupId: options.groupId,
+      shopID:options.shopId
+    });
     this.animation = wx.createAnimation({
       duration: 500
     });

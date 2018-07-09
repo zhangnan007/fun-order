@@ -5,11 +5,52 @@ Page({
    * 页面的初始数据
    */
   data: {
-    location: "北京",
+    isPacking:false, // 是否被选中 
     banners: [],
     nearShops: [],
   },
-
+  /**
+   * 扫码点餐
+   */
+  scanTowCode:function(event){
+    // 拉起微信扫码
+    wx.scanCode({
+      onlyFromCamera: true,
+      scanType:"qrCode",
+      success:function(result){
+        wx.navigateTo({
+          url:'../menu/menu?info=result'
+        });
+      }
+    });
+  },
+  /**
+   * 切换就餐类型选中样式
+   */
+  changeStyle:function(event){
+    var that = this;
+    var temPack = that.data.isPacking;
+    if (temPack){
+      temPack = false;
+    } else {
+      temPack = true;
+    }
+    that.setData({
+      isPacking: temPack
+    });
+  },
+  /**
+   * 不支持提示
+   */
+  notSupportHint: function(){
+    wx.showModal({
+      title:"提示",
+      content:"暂不支持该就餐类型",
+      showCancel:false,
+      confirmText:"知道了",
+      confirmColor: "#d81e06"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -33,6 +74,7 @@ Page({
       fail: function (res) {
       }
     })
+    // 获取附近餐厅
     wx.request({
       url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/queryNearShops',
       method: 'POST',

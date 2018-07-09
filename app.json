@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/seach/seach",
     "pages/index/index",
+    "pages/menu/menu",
     "pages/order/order",
-    "pages/my/my",
-    "pages/menu/menu"
+    "pages/my/my"
   ],
   "window":{
     "navigationBarTitleText": "自助点餐",

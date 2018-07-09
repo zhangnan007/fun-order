@@ -4,7 +4,7 @@
     <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500">
       <block wx:for="{{banners}}" wx:key="*this">
         <swiper-item>
-          <image class="img-banner" src="{{item}}" mode="aspectFit" />
+          <image class="img-banner" src="{{item}}" />
         </swiper-item>
       </block>
     </swiper>
@@ -45,9 +45,9 @@
                 </view>
                 <!--加减菜操作区start-->
                 <view style="height:36%;width:95%;">
-                  <image class="food-add-image" src="../img/add.png" catchtap='addFoodToCart' data-foodNumKey="{{index + '_' + itemIndex}}" mode="aspectFit" />
+                  <image class="food-add-image" src="../img/menu/add.png" catchtap='addFoodToCart' data-foodNumKey="{{index + '_' + itemIndex}}" mode="aspectFit" />
                   <view class="food-num-view">{{foodNum[index + '_' + itemIndex]}}</view>
-                  <image class="food-reduce-image" src="../img/reduce.png" catchtap='subFoodToCart' wx:if="{{foodNum[index + '_' + itemIndex] > 0}}" data-foodNumKey="{{index + '_' + itemIndex}}" mode="aspectFit" />
+                  <image class="food-reduce-image" src="../img/menu/reduce.png" catchtap='subFoodToCart' wx:if="{{foodNum[index + '_' + itemIndex] > 0}}" data-foodNumKey="{{index + '_' + itemIndex}}" mode="aspectFit" />
                 </view>
                 <!--加减菜操作区 end-->
               </view>
@@ -61,7 +61,7 @@
   </view>
   <view class="bottom-view">
     <view catchtap='showCartPage' class="cart-img">
-      <image class="food-cart-img" src="../img/cart.png"></image>
+      <image class="food-cart-img" src="../img/menu/cart.png"></image>
       <view animation="{{animation}}" class="shop-cart-count">{{cartNum}}</view>
     </view>
     <view class="food-price">

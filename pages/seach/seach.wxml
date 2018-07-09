@@ -1,0 +1,34 @@
+<view class='container common-style' catchtouchmove='true'>
+  <view class='top center'>
+    <view class='top-seach'>
+      <!--搜索icon-->
+      <icon type="search" size="16" />
+      <input style='color:#bfbfbf' placeholder=' 搜索餐厅名称' />
+    </view>
+  </view>
+  <view class='body'>
+    <scroll-view scroll-y="true" class="common-style">
+      <label wx:for='{{searchShops}}' wx:key="*this">
+        <navigator url="../menu/menu?groupId={{item.groupId}}&shopId={{item.shopId}}" class='shop-item-view'>
+          <!--门店logo-->
+          <image class='shop-logo center' src='{{item.shopLogo}}' />
+          <!--列表右侧-->
+          <view class='shop-right-view'>
+            <view class='right-top'>
+              <!--门店名称-->
+              <view class='shop-name'>{{item.shopName}}</view>
+              <!--门店距离-->
+              <view class='shop-distance'>{{item.distance}}</view>
+            </view>
+            <!--门店支持就餐类型-->
+            <view class='shop-dining-type'>{{item.diningType}}</view>
+            <!--门店地址-->
+            <view class='shop-address'>
+              <text>{{item.address}}</text>
+            </view>
+          </view>
+        </navigator>
+      </label>
+    </scroll-view>
+  </view>
+</view>
