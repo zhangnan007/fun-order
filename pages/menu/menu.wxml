@@ -15,13 +15,10 @@
     <view class="middle-left">
       <scroll-view scroll-y="true" scroll-with-animation="true" scroll-into-view="{{currentFood}}" class="common-style">
         <view wx:for='{{foodTypes}}' wx:key="*this" bindtap="foodTypeOnClick" id="food{{index}}" data-index="{{index}}" class="{{item.isChecked?'food-type-on':'food-type-off'}} {{item.isUTop?'after-item-top':''}} {{item.isUBottom?'before-item-bottom':''}}">
-          <view class="food-type-top-view">
-            <image class="food-types-img {{item.checkNum > 0?'checked-food-types-img':''}}" mode="aspectFit" src='{{item.url}}' />
-            <block wx:if="{{item.checkNum > 0}}">
-              <view class="checked-num-view" id="{{index}}">{{item.checkNum}}</view>
-            </block>
-          </view>
-          <view class="food-types-remark" style="height:40%;width:100%">{{item.title}}</view>
+          <view class="type-title-view">{{item.title}}</view>
+          <block wx:if="{{item.checkNum > 0}}">
+            <view class='type-checked-num-view' id="{{index}}">{{item.checkNum}}</view>
+          </block>
         </view>
       </scroll-view>
     </view>
@@ -67,55 +64,56 @@
     <view class="food-price">
       <text>￥  {{totalPrice}}</text>
     </view>
-    <view class="choose-done">
+    <view catchtap='goToPayCenter' class="choose-done">
       <text>选好了 ></text>
     </view>
   </view>
 
-<!--以下为隐藏区域-->
-<!--右侧菜品明细自定义弹出层start-->
-<!--背景模态承载容器 start-->
-<view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
-<!--背景模态承载容器 end-->
-<!--自定义弹出层start-->
-<view class="food-detail-dialog" wx:if="{{showDetailDialog}}">
-  <!-- 弹出层内容 -->
-  <view class="detail-dialog-top-view">
-    <!--菜品图片展示区域-->
-    <view class='food-description-top-view'>
-      <image src='{{foodDetailImgUrl}}' mode="scaleToFill" style="width:100%;height:100%;" />
+  <!--以下为隐藏区域-->
+  <!--右侧菜品明细自定义弹出层start-->
+  <!--背景模态承载容器 start-->
+  <view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <!--背景模态承载容器 end-->
+  <!--自定义弹出层start-->
+  <view class="food-detail-dialog" wx:if="{{showDetailDialog}}">
+    <!-- 弹出层内容 -->
+    <view class="detail-dialog-top-view">
+      <!--菜品图片展示区域-->
+      <view class='food-description-top-view'>
+        <image src='{{foodDetailImgUrl}}' mode="scaleToFill" style="width:100%;height:100%;" />
+      </view>
+      <!--菜品文字说明区域-->
+      <view class='food-description-middle-view'>
+        <view class='food-dialog-title'>
+          <text decode="true">&nbsp;&nbsp;菜品名称+菜品名称+菜品名称+菜品名称+菜品名称+菜品名称+菜品名称</text>
+        </view>
+        <view class='food-dialog-taste'>
+          <text decode="true">&nbsp;&nbsp;变态辣</text>
+        </view>
+        <view class='food-dialog-intro-view'>
+          <text decode="true">&nbsp;&nbsp;炸的金黄的三角豆泡加上调制高汤冒着清纯香老北京的味道</text>
+        </view>
+      </view>
+      <!--菜品价格区域-->
+      <view class='food-description-bottom-view'>
+        <view class="food-dialog-price">
+          <text style="color:#e02d3f;" decode='true'>&nbsp;&nbsp;￥</text>
+          <text class="food-dialog-price-text" decode="true">22.75</text>
+        </view>
+        <view wx:if="{{!isMultiSpeci}}" class='food-dialog-food-num'>
+          <text decode="true">加减菜数量&nbsp;&nbsp;</text>
+        </view>
+        <view wx:if="{{isMultiSpeci}}" class='food-dialog-food-num'>
+          <text decode="true">选规格&nbsp;&nbsp;</text>
+        </view>
+      </view>
     </view>
-    <!--菜品文字说明区域-->
-    <view class='food-description-middle-view'>
-      <view class='food-dialog-title'>
-        <text decode="true">&nbsp;&nbsp;菜品名称+菜品名称+菜品名称+菜品名称+菜品名称+菜品名称+菜品名称</text>
-      </view>
-      <view class='food-dialog-taste'>
-        <text decode="true">&nbsp;&nbsp;变态辣</text>
-      </view>
-      <view class='food-dialog-intro-view'>
-        <text decode="true">&nbsp;&nbsp;炸的金黄的三角豆泡加上调制高汤冒着清纯香老北京的味道</text>
-      </view>
-    </view>
-    <!--菜品价格区域-->
-    <view class='food-description-bottom-view'>
-      <view class="food-dialog-price">
-        <text style="color:#e02d3f;" decode='true'>&nbsp;&nbsp;￥</text><text class="food-dialog-price-text" decode="true">22.75</text>
-      </view>
-      <view wx:if="{{!isMultiSpeci}}" class='food-dialog-food-num'>
-        <text decode="true">加减菜数量&nbsp;&nbsp;</text>
-      </view>
-      <view wx:if="{{isMultiSpeci}}" class='food-dialog-food-num'>
-        <text decode="true">选规格&nbsp;&nbsp;</text>
-      </view>
+    <!-- 弹出层底部关闭icon -->
+    <view class="detail-dialog-bottom-view">
+      <image bindtap="hideDetail" src='../img/close.png' mode="aspectFit" />
     </view>
   </view>
-  <!-- 弹出层底部关闭icon -->
-  <view class="detail-dialog-bottom-view"> 
-    <image bindtap="hideDetail" src='../img/close.png' mode="aspectFit" />
-  </view> 
-</view>
-<!--自定义弹出层end-->
-<!--右侧菜品明细自定义弹出层end-->
+  <!--自定义弹出层end-->
+  <!--右侧菜品明细自定义弹出层end-->
 
 </view>

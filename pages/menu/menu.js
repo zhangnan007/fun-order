@@ -21,6 +21,12 @@ Page({
     foods: [],
     foodsHeights:[] // 菜单右侧分类高度
   },
+  /**跳转支付中心页面 */
+  goToPayCenter: function (event){
+    wx.navigateTo({
+      url:"../pay/pay"
+    });
+  },
   /**
    * 显示购物车管理页
    */

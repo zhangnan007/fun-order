@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/seach/seach",
-    "pages/index/index",
     "pages/menu/menu",
+    "pages/index/index",
+    "pages/seach/seach",
     "pages/order/order",
+    "pages/pay/pay",
     "pages/my/my"
   ],
   "window":{

@@ -60,7 +60,9 @@
               <!--门店支持就餐类型-->
               <view class='shop-dining-type'>{{item.diningType}}</view>
               <!--门店地址-->
-              <view class='shop-address'>{{item.address}}</view>
+              <view class='shop-address'>
+                <text>{{item.address}}</text>
+              </view>
             </view>
           </navigator>
         </label>
