@@ -72,9 +72,9 @@
   <!--以下为隐藏区域-->
   <!--右侧菜品明细自定义弹出层start-->
   <!--背景模态承载容器 start-->
-  <view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="food-detail-modal" bindtap="hideDetail" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" />
   <!--背景模态承载容器 end-->
-  <!--自定义弹出层start-->
+  <!--自定义弹出层菜品介绍start-->
   <view class="food-detail-dialog" wx:if="{{showDetailDialog}}">
     <!-- 弹出层内容 -->
     <view class="detail-dialog-top-view">
@@ -113,7 +113,30 @@
       <image bindtap="hideDetail" src='../img/close.png' mode="aspectFit" />
     </view>
   </view>
-  <!--自定义弹出层end-->
-  <!--右侧菜品明细自定义弹出层end-->
+  <!--自定义弹出层菜品介绍end-->
 
+  <!--购物车管理页弹出层 start-->
+    <view>
+      <!--清空购物车 start-->
+      <view></view>
+      <!--清空购物车 end-->
+      <!--食品列表 start-->
+      <view>
+      <scroll-view scroll-y="true" class="common-style">
+        <label>
+        <!--菜品名称-->
+          <view></view>
+          <!--菜品售价-->
+          <view></view>
+          <!--菜品打包费-->
+          <view></view>
+          <!--菜品数量-->
+          <view></view>
+        </label>
+      </scroll-view>
+      
+      </view>
+      <!--食品列表 end-->
+    </view>
+  <!--购物车管理页弹出层 end-->
 </view>

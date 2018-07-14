@@ -5,9 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    searchShops: []
+    searchShops: [],
+    diningTypeCode: 1 // 就餐类型，默认为1，1堂食，2到店自提，3预约，外卖
   },
-
+  diningTypeOnClick: function (event) {
+    var that = this;
+    that.setData({
+      diningTypeCode: event.currentTarget.dataset.diningTypeCode
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

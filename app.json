@@ -1,10 +1,10 @@
 {
   "pages":[
-    "pages/menu/menu",
+    "pages/pay/pay",
     "pages/index/index",
     "pages/seach/seach",
+    "pages/menu/menu",
     "pages/order/order",
-    "pages/pay/pay",
     "pages/my/my"
   ],
   "window":{

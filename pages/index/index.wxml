@@ -46,7 +46,7 @@
     <view class='near-shops-view'>
       <scroll-view scroll-y="true" class="common-style">
         <label wx:for='{{nearShops}}' wx:key="*this">
-          <navigator url="../menu/menu?groupId={{item.groupId}}&shopId={{item.shopId}}" class='shop-item-view'>
+          <view catchtap='shopOnclick' data-groupId="{{item.groupId}}" data-shopId="{{item.shopId}}" class='shop-item-view'>
             <!--门店logo-->
             <image class='shop-logo center' src='{{item.shopLogo}}' />
             <!--列表右侧-->
@@ -64,7 +64,7 @@
                 <text>{{item.address}}</text>
               </view>
             </view>
-          </navigator>
+          </view>
         </label>
       </scroll-view>
     </view>

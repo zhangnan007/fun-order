@@ -3,8 +3,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    groupId:0, //集团ID
-    shopId:0, //店铺ID
+    groupId:'', //集团ID
+    shopId:'', //店铺ID
     animation:{}, // 加减菜品购物车数量动画容器
     currentFoodTitle:"foodTitle" + 0, // 当前选中菜品类型
     currentFood: "food" + 0, // 当前选中右侧菜品详情
@@ -16,6 +16,7 @@ Page({
     totalPrice:0,
     foodNum:{}, // 已选中菜品信息 key=菜品索引，value=数量
     cartNum:0, // 购物车中菜品数量
+    diningTypeCode: '', // 就餐类型:1堂食;2到店自提;3外卖;4预约
     banners: [],
     foodTypes: [],
     foods: [],
@@ -114,6 +115,11 @@ Page({
         break;
       }
     };
+    // 判断左侧菜品类型是否已被选中
+    var foodTypes = that.data.foodTypes;
+    if (foodTypes[checkedFoodTypeIndex].isChecked){
+      return;
+    }
     // 修改左侧菜品分类顶端位置
     that.setData({
       currentFood: "food" + checkedFoodTypeIndex
@@ -203,40 +209,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.groupId);
+    var that = this;
+    var bans = "";
+      if(typeof(options.banners) != "undefined"){
+        bans = options.banners.split(',');
+      }
     this.setData({
-      groupId: options.groupId,
-      shopID:options.shopId
+      groupId: options.gId,
+      shopID: options.sId,
+      banners: bans,
+      diningTypeCode: options.diningTypeCode
     });
     this.animation = wx.createAnimation({
       duration: 500
     });
-    let that = this;
-    // 获取banners图
+    // 获取店铺菜品数据
     wx.request({
-      url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/findBanners',
-      method:'POST',
-      header:{
-        'content-type': 'application/json' // 默认值
-      },
-      data:{
-        groupID:111
-      },
-      success:function(res){
-        that.setData({
-          banners: res.data.data,
-        });
-      },
-      fail:function(res){
-      }
-    })
-    // 发送请求
-    wx.request({
-      url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/findShopMenu',
+      url: 'https://easy-mock.com/mock/5afb0355fa8a1e7a7397ec92/example/findShopFoods',
       method:'POST',
       data:{
-        groupID:11,
-        shopID:112
+        gID:that.data.groupId,
+        sID:that.data.shopId
       },
       header:{
         'Accept': 'application/json'
@@ -260,7 +253,7 @@ Page({
           success: function (result) {
             var winHeight = result.windowHeight * 0.69; // 获取屏幕可用高度
             // 获取右侧菜品分类部分的高度3%
-            var foodTitleHeight = Number(winHeight * 0.03);
+            // var foodTitleHeight = Number(winHeight * 0.03);
             // 获取右侧菜品详情部分单个菜品的高度20% 
             var foodDetailHeight = Number(winHeight * 0.2);
             // 声明临时容器
@@ -272,7 +265,7 @@ Page({
             for (var index in foods) {
               var food = foods[index];
               // 计算右侧单个菜品类型的总高度(N个菜品详情+1个菜品类型标题)
-              var conHeight = Number(food.foodsIntro.length * foodDetailHeight + foodTitleHeight);
+              var conHeight = Number(food.foodsIntro.length * foodDetailHeight);// + foodTitleHeight);
               // 记录到集合容器中，顺序与左侧菜品类型保持一致
               heights.push(conHeight);
               // 计算总高度

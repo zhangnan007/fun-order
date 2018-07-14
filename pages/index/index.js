@@ -10,16 +10,32 @@ Page({
     nearShops: [],
   },
   /**
+   * 店铺列表点击事件
+   */
+  shopOnclick:function(event){
+    var that = this;
+    var diningTypeCode = 1;
+    if (that.data.isPacking){
+      diningTypeCode = 2;
+    }
+    var groupId = event.currentTarget.dataset.groupid;
+    var shopId = event.currentTarget.dataset.shopid;
+    var list = that.data.banners;
+    wx.navigateTo({
+      url: '../menu/menu?gId=' + groupId + '&sId=' + shopId + '&banners=' + list + '&type=' + diningTypeCode,
+    })
+  },
+  /**
    * 扫码点餐
    */
   scanTowCode:function(event){
     // 拉起微信扫码
     wx.scanCode({
-      onlyFromCamera: true,
+      // onlyFromCamera: true,
       scanType:"qrCode",
       success:function(result){
         wx.navigateTo({
-          url:'../menu/menu?info=result'
+          url:'../menu/menu'
         });
       }
     });
@@ -62,9 +78,6 @@ Page({
       method: 'POST',
       header: {
         'content-type': 'application/json' // 默认值
-      },
-      data: {
-        groupID: 111
       },
       success: function (res) {
         that.setData({

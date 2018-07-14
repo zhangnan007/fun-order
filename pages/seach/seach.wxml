@@ -6,7 +6,13 @@
       <input style='color:#bfbfbf' placeholder=' 搜索餐厅名称' />
     </view>
   </view>
-  <view class='body'>
+  <view class='middle center'>
+    <view data-dining-type-code='1' catchtap='diningTypeOnClick' class="{{diningTypeCode==1?'dining-type-selected':'dining-type'}} center">堂食</view>
+    <view data-dining-type-code='2' catchtap='diningTypeOnClick' class="{{diningTypeCode==2?'dining-type-selected':'dining-type'}} center">到店自提</view>
+    <view data-dining-type-code='3' catchtap='diningTypeOnClick' class="{{diningTypeCode==3?'dining-type-selected':'dining-type'}} center">预约</view>
+    <view data-dining-type-code='4' catchtap='diningTypeOnClick' class="{{diningTypeCode==4?'dining-type-selected':'dining-type'}} center">外卖</view>
+  </view>
+  <view class='bottom'>
     <scroll-view scroll-y="true" class="common-style">
       <label wx:for='{{searchShops}}' wx:key="*this">
         <navigator url="../menu/menu?groupId={{item.groupId}}&shopId={{item.shopId}}" class='shop-item-view'>

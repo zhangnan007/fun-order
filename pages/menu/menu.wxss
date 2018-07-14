@@ -89,6 +89,7 @@ swiper, swiper-item, .img-banner {
   float: right;
   height: 53%;
   width: 21%;
+  margin-top: 3px;
   border-radius: 25px;
   border: 2% solid #e02d3f;
   background-color: #e02d3f;
