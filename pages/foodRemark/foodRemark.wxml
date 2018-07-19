@@ -1,0 +1,21 @@
+<view class='container common-style' catchtouchmove='true'>
+  <view class='top'>
+    <view class='remark-view center'>
+     <textarea class='remark-textarea' maxlength='50' placeholder='请输入备注，最多50个字'>
+       <text class="current-word-number">0/50</text> 
+    </textarea> 
+    </view>
+    <view class='tag-list-view'>
+       <text>不吃辣</text>
+      <text>少放辣</text>
+      <text>多放辣</text>
+      <text>不吃蒜</text>
+      <text>不吃葱</text>
+      <text>不吃香菜</text> 
+    </view>
+  </view>
+  <view class='bottom center'>
+    <text class='center'>完成</text>
+  </view>
+
+</view>

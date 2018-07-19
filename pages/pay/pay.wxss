@@ -1,1 +1,180 @@
-/* pages/pay/pay.wxss */
+.common-style {
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  flex-direction: column;
+  font-size: 32rpx;
+  overflow-y: hidden;
+  background: #d3d3d3;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.body-top {
+  position: absolute;
+  width: 97%;
+  height: 12%;
+}
+
+.body-middle {
+  position: absolute;
+  width: 97%;
+  top: 13%;
+  height: 50%;
+}
+
+.body-bottom {
+  position: absolute;
+  width: 97%;
+  top: 64%;
+  height: 36%;
+}
+
+.pay-top-info-view {
+  width: 100%;
+  height: 50%;
+  background: white;
+}
+
+.item-remarks {
+  float: left;
+  height: 100%;
+  width: 20%;
+  color: #707070;
+  border-right: 1px #d3d3d3 solid;
+}
+
+.item-value {
+  height: 100%;
+  color: #515151;
+  width: 79%;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-detail-title {
+  width: 100%;
+  height: 10%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #515151;
+  margin-bottom: 2px;
+}
+
+.order-detail-view {
+  width: 100%;
+  height: 80%;
+  margin-bottom: 2px;
+  background: white;
+}
+
+.order-sum-view {
+  width: 100%;
+  height: 10%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.total-price {
+  margin-right: 5px;
+  color: red;
+  font-weight: bold;
+}
+
+.total-price-remarks {
+  justify-content: flex-end;
+}
+
+.total-food-num, .total-price-remarks, .total-price {
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.bottom-item-view {
+  width: 100%;
+  height: 24%;
+  margin-bottom: 1px;
+  background: white;
+}
+
+.bottom-pay-view {
+  width: 100%;
+  height: 28%;
+  background: white;
+}
+
+.bottom-item-remark {
+  float: left;
+  height: 100%;
+  width: 20%;
+  color: #707070;
+  border-right: 1px #d3d3d3 solid;
+}
+
+.bottom-item-view > input {
+  width: 85%;
+  height: 70%;
+  margin-left: 10px;
+}
+
+.tastes-remark, .pay-type-remark {
+  width: 85%;
+  height: 70%;
+  color: #707070;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.pay-type-remark {
+  color: red;
+  font-weight: bold;
+}
+
+.pay-arefavorable {
+  height: 100%;
+  width: 30%;
+  color: #707070;
+  font-size: 100%;
+}
+
+.sum-price-view {
+  height: 100%;
+  width: 40%;
+  font-size: 140%;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.go-to-pay {
+  height: 100%;
+  width: 30%;
+  font-size: 120%;
+  color: white;
+  background: red;
+}

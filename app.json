@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/pay/pay",
+    "pages/foodRemark/foodRemark",
     "pages/index/index",
     "pages/seach/seach",
     "pages/menu/menu",

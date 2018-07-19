@@ -1,2 +1,59 @@
-<!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+<view class='container common-style' catchtouchmove='true'>
+  <view class='body-top'>
+    <!--餐厅地址 start-->
+    <view class='pay-top-info-view' style='margin-bottom: 2px;'>
+      <text class='item-remarks center'>餐厅名称</text>
+      <text class='item-value'>宽板凳(富强路)店</text>
+    </view>
+    <!--餐厅地址 end-->
+    <!--桌台号 start-->
+    <view class='pay-top-info-view'>
+      <text class='item-remarks center'>就餐方式</text>
+      <text class='item-value' style='color:red;'>堂食</text>
+    </view>
+    <!--桌台号 start-->
+  </view>
+  <view class='body-middle'>
+    <view class='order-detail-title'>
+      <text style='margin-left: 7px;'>订单详情</text>
+    </view>
+    <view class='order-detail-view'></view>
+    <view class='order-sum-view'>
+      <text class='total-food-num'>共计100件，</text>
+      <text class='total-price-remarks'>小计:</text>
+      <text class='total-price'>￥10000</text>
+    </view>
+
+  </view>
+  <view class='body-bottom'>
+    <!--桌台号-->
+    <view class='bottom-item-view center'>
+      <view class='bottom-item-remark center'>
+        <text>桌台号</text>
+        <text style='color: red;font-weight:bold;'>*</text>
+      </view>
+      <input type='number' placeholder='  请输入桌台号' />
+    </view>
+    <!--备注-->
+    <view class='bottom-item-view center'>
+      <text class='bottom-item-remark center'>备注</text>
+      <text class='tastes-remark' decode="true">口味、偏好等要求</text>
+    </view>
+    <!--支付方式-->
+    <view class='bottom-item-view center'>
+      <text class='bottom-item-remark center'>支付方式</text>
+      <text class='pay-type-remark'>微信支付</text>
+    </view>
+    <view class='bottom-pay-view center'>
+      <!--已优惠-->
+      <text class='pay-arefavorable center'>已优惠￥28.5</text>
+      <view class='sum-price-view'>
+        <text>合计</text>
+        <text style='color:red'>￥34</text>
+      </view>
+      <!--提交订单-->
+       <text class='go-to-pay center' decode="true">提交订单 </text> 
+    </view>
+
+  </view>
+</view>

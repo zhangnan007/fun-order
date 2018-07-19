@@ -1,0 +1,87 @@
+.common-style {
+  width: 100%;
+  height: 100%;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: absolute;
+  flex-direction: column;
+  font-size: 32rpx;
+  letter-spacing: 1px;
+  overflow-y: hidden;
+  background: #d3d3d3;
+}
+
+.top {
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: white;
+ display: flex;
+  flex-direction: column;
+   justify-content: center; 
+   align-items: center; 
+ }
+
+.remark-view {
+  height: 60%;
+  width: 95%;
+  margin-top: 10px;
+}
+.tag-list-view {
+  height: 38%;
+  width: 95%;
+  margin-top: 10px;
+}
+.remark-textarea {
+  height: 90%;
+  width: 90%;
+  background: #d3d3d3;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.current-word-number {
+  height: 97%;
+  width: 99%;
+  color: gray;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.bottom {
+  position: absolute;
+  top: 43%;
+  height: 10%;
+  width: 100%;
+}
+
+
+.tag-list-view > text{
+  float: left;
+  height: 30%;
+  width: 25%;
+  color: #707070;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border: 1px #d3d3d3 solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.bottom > text {
+  height: 80%;
+  width: 85%;
+  background: red;
+  color: white;
+}
