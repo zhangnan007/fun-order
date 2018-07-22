@@ -1,8 +1,8 @@
 {
   "pages":[
     "pages/pay/pay",
-    "pages/foodRemark/foodRemark",
     "pages/index/index",
+    "pages/foodRemark/foodRemark",
     "pages/seach/seach",
     "pages/menu/menu",
     "pages/order/order",

@@ -271,7 +271,6 @@ swiper, swiper-item, .img-banner {
   opacity: 0.5;
   overflow: hidden;
   z-index: 9000;
-  /* color: #fff; */
 }
 
 .food-detail-dialog {

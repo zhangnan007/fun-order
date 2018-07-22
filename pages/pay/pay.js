@@ -5,10 +5,77 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
-  },
+    
+    foodDetail: {
+      "totalPrice": 100.0,
+      "totalNum": 10,
+      "totalPackingCharge": 10.0,
+      "foodList": [{
+        "foodName": "凉面",
+        "isSetMeal": false,   //是否套餐
+        "originalPrice": 10.0,
+        "price": 8.0,
+        "num": 2,
+        "spec": "小份",
+      }, {
+        "foodName": "1号套餐",
+        "isSetMeal": true,
+        "originalPrice": 10.0,
+        "price": 8.0,
+        "num": 1,
+        "spec": "小份",
+        "sonFoods": "豆浆 x1，油条 x1，茶叶蛋 x1"
+        }, {
+          "foodName": "凉面",
+          "isSetMeal": false,   //是否套餐
+          "originalPrice": 10.0,
+          "price": 8.0,
+          "num": 2,
+          "spec": "小份",
+        }, {
+          "foodName": "1号套餐",
+          "isSetMeal": true,
+          "originalPrice": 10.0,
+          "price": 8.0,
+          "num": 1,
+          "spec": "小份",
+          "sonFoods": "豆浆 x1，油条 x1，茶叶蛋 x1"
+        }, {
+          "foodName": "凉面",
+          "isSetMeal": false,   //是否套餐
+          "originalPrice": 10.0,
+          "price": 8.0,
+          "num": 2,
+          "spec": "小份",
+        }, {
+          "foodName": "1号套餐",
+          "isSetMeal": true,
+          "originalPrice": 10.0,
+          "price": 8.0,
+          "num": 1,
+          "spec": "小份",
+          "sonFoods": "豆浆 x1，油条 x1，茶叶蛋 x1"
+        }, {
+          "foodName": "凉面",
+          "isSetMeal": false,   //是否套餐
+          "originalPrice": 10.0,
+          "price": 8.0,
+          "num": 2,
+          "spec": "小份",
+        }, {
+          "foodName": "1号套餐",
+          "isSetMeal": true,
+          "originalPrice": 10.0,
+          "price": 8.0,
+          "num": 1,
+          "spec": "小份",
+          "sonFoods": "豆浆 x1，油条 x1，茶叶蛋 x1"
+        }]
+    }
 
-  /**
+
+  },
+  /*
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {

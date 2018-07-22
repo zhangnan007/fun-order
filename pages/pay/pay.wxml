@@ -15,13 +15,32 @@
   </view>
   <view class='body-middle'>
     <view class='order-detail-title'>
-      <text style='margin-left: 7px;'>订单详情</text>
+      <text style='margin-left: 7px;'>餐品详情</text>
     </view>
-    <view class='order-detail-view'></view>
+    <!--菜品列表 start-->
+    <view class='order-detail-view'>
+      <scroll-view scroll-y="true" class="common-style">
+        <label wx:for='{{foodDetail.foodList}}' wx:key="*this">
+          <view class='detail-item-view'>
+            <view class="{{item.isSetMeal?'set-meal-on':'set-meal-off'}}">
+              <text class='item-food-name'>{{item.foodName}}({{item.spec}})</text>
+              <text class='item-original-price'>￥{{item.originalPrice}}</text>
+              <text class='item-price' decode="true">￥{{item.price}}</text>
+              <text class='item-num'>x{{item.num}}</text>
+            </view>
+            <block wx:if="{{item.isSetMeal}}">
+              <text class='son-food-info'>{{item.sonFoods}}</text>
+            </block>
+          </view>
+        </label>
+      </scroll-view>
+    </view>
+    <!--菜品列表 end-->
     <view class='order-sum-view'>
-      <text class='total-food-num'>共计100件，</text>
-      <text class='total-price-remarks'>小计:</text>
-      <text class='total-price'>￥10000</text>
+      <text class='total-food-num'>共计{{foodDetail.totalNum}}件，</text>
+      <text class='total-packing-charge'>打包费:￥{{foodDetail.totalPackingCharge}}，</text>
+      <text class='total-price-remarks'>小计：</text>
+      <text class='total-price'>￥{{foodDetail.totalPrice}}</text>
     </view>
 
   </view>
@@ -52,7 +71,7 @@
         <text style='color:red'>￥34</text>
       </view>
       <!--提交订单-->
-       <text class='go-to-pay center' decode="true">提交订单 </text> 
+      <text class='go-to-pay center' decode="true">提交订单 </text>
     </view>
 
   </view>

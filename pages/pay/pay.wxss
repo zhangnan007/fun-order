@@ -12,7 +12,6 @@
 
 .container {
   position: absolute;
-  flex-direction: column;
   font-size: 32rpx;
   overflow-y: hidden;
   background: #d3d3d3;
@@ -79,8 +78,8 @@
 .order-detail-view {
   width: 100%;
   height: 80%;
-  margin-bottom: 2px;
   background: white;
+  margin-bottom: 2px;
 }
 
 .order-sum-view {
@@ -103,11 +102,16 @@
   justify-content: flex-end;
 }
 
-.total-food-num, .total-price-remarks, .total-price {
+.total-food-num, .total-price-remarks, .total-packing-charge, .total-price {
   height: 80%;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.total-food-num, .total-packing-charge {
+  color: #707070;
+  font-size: 16px;
 }
 
 .bottom-item-view {
@@ -177,4 +181,67 @@
   font-size: 120%;
   color: white;
   background: red;
+}
+
+.detail-item-view {
+  width: 100%;
+  height: 14%;
+  margin-left: 7px;
+  border-bottom: 1px #d3d3d3 solid;
+}
+
+.set-meal-on, .set-meal-off {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.set-meal-off {
+  height: 100%;
+}
+
+.set-meal-on {
+  height: 60%;
+}
+
+.son-food-info {
+  width: 100%;
+  height: 40%;
+  color: #707070;
+  font-size: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item-food-name,.item-original-price,.item-price,.item-num{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.item-food-name {
+  width: 35%;
+  
+}
+
+.item-original-price {
+  width: 20%;
+  color: #d3d3d3;
+  justify-content: flex-end;
+  text-decoration:line-through;
+}
+
+.item-price {
+  width: 20%;
+  justify-content: flex-end;
+}
+
+.item-num {
+  width: 20%;
+  margin-right: 10px;
+  justify-content: flex-end;
 }
