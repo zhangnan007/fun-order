@@ -1,0 +1,37 @@
+<view class='container common-style' catchtouchmove='true'>
+
+  <view class='shop-info-view'>
+    <image class='shop-logo-img' src='http://fuss10.elemecdn.com/a/32/84c83028b4ee84c339eef766ceac7png.png' />
+    <text decode='true'>肯德基(火神庙店)&nbsp;&nbsp;></text>
+  </view>
+  <view class='order-num-view'>
+    <text class='order-id-text'>订单编号：12343567890</text>
+    <text class='order-status-text'>已完成</text>
+  </view>
+  <view class='order-detail-view'>
+    <scroll-view scroll-y="true" class="common-style">
+      <label wx:for='{{foodDetail.foodList}}' wx:key="*this">
+        <view class='detail-item-view'>
+          <view class="{{item.isSetMeal?'set-meal-on':'set-meal-off'}}">
+            <text class='item-food-name'>{{item.foodName}}({{item.spec}})</text>
+            <text class='item-original-price'>￥{{item.originalPrice}}</text>
+            <text class='item-price' decode="true">￥{{item.price}}</text>
+            <text class='item-num'>x{{item.num}}</text>
+          </view>
+          <block wx:if="{{item.isSetMeal}}">
+            <text class='son-food-info'>{{item.sonFoods}}</text>
+          </block>
+        </view>
+      </label>
+    </scroll-view>
+  </view>
+  <view class='order-text-index-view'>
+    <text decode='true'>共10件，打包费￥10，实付￥100&nbsp;&nbsp;</text>
+    <text decode='true'>支付方式：微信支付&nbsp;&nbsp;</text>
+    <text decode='true'>下单时间：2018年07月23日 22：50&nbsp;&nbsp;</text>
+    <text decode='true'>完成时间：2018年07月23日 22：50&nbsp;&nbsp;</text>
+  </view>
+  <view class='order-operation-view'>
+    <text>再来一单</text>
+  </view>
+</view>
