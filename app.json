@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/orderDetail/orderDetail",
     "pages/order/order",
+    "pages/menu/menu",
+    "pages/orderDetail/orderDetail",
     "pages/pay/pay",
     "pages/index/index",
     "pages/foodRemark/foodRemark",
     "pages/seach/seach",
-    "pages/menu/menu",
     "pages/my/my"
   ],
   "window":{

@@ -14,8 +14,103 @@
   position: absolute;
   font-size: 32rpx;
   overflow-y: hidden;
+  background: white;
   background: #d3d3d3;
+}
+
+.left-tab {
+  float: left;
+  height: 100%;
+  width: 27%;
+  background: white;
+}
+
+.tab-checked, .tab-unchecked {
+  width: 100%;
+  height: 10%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+}
+
+.tab-checked {
+  background: #d3d3d3;
+  border-left: 5px red solid;
+}
+
+.right-body {
+  float: left;
+  height: 100%;
+  width: 73%;
+  background: white;
+}
+
+.order-item-view {
+  height: 20%;
+  width: 100%;
+  margin-left: 5px;
+}
+
+.shop-info {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 1px #d3d3d3 solid;
+}
+
+.shop-logo-img {
+  width: 20%;
+  height: 99%;
+}
+
+.order-id {
+  height: 20%;
+  width: 100%;
+  font-size: 13px;
+  color: #515151;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px #d3d3d3 solid;
+}
+
+.pay-info {
+  height: 20%;
+  width: 100%;
+  font-size: 13px;
+  color: #515151;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px #d3d3d3 solid;
+}
+
+.operation-view {
+  height: 25%;
+  width: 100%;
+  border-bottom: 3px #d3d3d3 solid;
+}
+
+.order-status, .order-again {
+  height: 100%;
+  color: #515151;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.order-status {
+  width: 50%;
+  font-size: 13px;
+}
+
+.order-again {
+  width: 47%;
+  justify-content: flex-end;
+  font-weight: bold;
 }

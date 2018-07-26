@@ -114,7 +114,6 @@
 .order-operation-view > text {
   float: right;
   height: 80%;
-  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -123,6 +122,12 @@
   background: red;
   color: white;
   font-size: 23px;
+}
+.four-word-text{
+  width: 30%;
+}
+.tow-word-text{
+  width: 16%;
 }
 .detail-item-view {
   width: 100%;

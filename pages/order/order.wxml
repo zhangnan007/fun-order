@@ -1,21 +1,38 @@
 <view class='container common-style' catchtouchmove='true'>
-  <scroll-view scroll-y="true" class="common-style">
-    <block wx:for='{{foodTypes}}' wx:key="*this">
-      <view>
-        <image />
-        <text>海底捞(富强路店)  ></text>
-        <text>已完成</text>
-      </view>
-      <view>
-        <text>订单编号：123456789010</text>
-      </view>
-      <view>
-        <text>共10件商品，</text>
-        <text>实付￥100</text>
-      </view>
-      <view>
-        <text>再来一单</text>
-      </view>
-    </block>
-  </scroll-view>
+  <view class="left-tab">
+    <view class="{{currentTab==0?'tab-checked':'tab-unchecked'}}" data-current="0" bindtap="clickTab">未完成订单</view>
+    <view class="{{currentTab==1?'tab-checked':'tab-unchecked'}}" data-current="1" bindtap="clickTab">历史订单</view>
+  </view>
+  <view class='right-body'>
+    <swiper class='common-style' current="{{currentTab}}">
+      <swiper-item class='common-style'>
+        <view class='common-style'>
+          <scroll-view scroll-y="true" class="common-style">
+            <block wx:for='{{orders}}' wx:key="*this">
+              <view class='order-item-view'>
+                <view class='shop-info'>
+                  <image class='shop-logo-img' src='{{item.logoPath}}' />
+                  <text decode='true'>{{item.shopName}}&nbsp;&nbsp;></text>
+                </view>
+                <text class='order-id'>订单编号：{{item.orderId}}</text>
+                <view class='pay-info'>
+                  <text>共{{item.totalNum}}件商品，</text>
+                  <text>打包费￥{{item.totalNum}}，</text>
+                  <text decode='true'>实付￥{{item.totalPacking}}&nbsp;&nbsp;</text>
+                </view>
+                <view class='operation-view'>
+                <text class='order-status'>订单状态：{{item.status}}</text>
+                  <text decode='true' class='order-again'>再来一单&nbsp;&nbsp;></text>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+
+
 </view>

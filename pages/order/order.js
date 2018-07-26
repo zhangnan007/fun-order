@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    currentTab:0,
+    orders:[{
+      "logoPath":"http://fuss10.elemecdn.com/a/32/84c83028b4ee84c339eef766ceac7png.png",
+      "shopName":"必胜客(富强路店)",
+      "status":"已完成",
+      "orderId":"123456789023",
+      "totalNum":10,
+      "totalPrice":100,
+      "totalPacking":5
+    }]
   },
 
   /**

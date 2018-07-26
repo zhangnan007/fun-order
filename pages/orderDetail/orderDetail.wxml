@@ -27,11 +27,13 @@
   </view>
   <view class='order-text-index-view'>
     <text decode='true'>共10件，打包费￥10，实付￥100&nbsp;&nbsp;</text>
-    <text decode='true'>支付方式：微信支付&nbsp;&nbsp;</text>
+    <text decode='true'>就餐类型：堂食，支付方式：微信支付&nbsp;&nbsp;</text>
     <text decode='true'>下单时间：2018年07月23日 22：50&nbsp;&nbsp;</text>
     <text decode='true'>完成时间：2018年07月23日 22：50&nbsp;&nbsp;</text>
   </view>
   <view class='order-operation-view'>
-    <text>再来一单</text>
-  </view>
+    <text class='four-word-text'>再来一单</text>
+    <text class='tow-word-text'>减菜</text>
+    <text class='tow-word-text'>退单</text>
+  </view> 
 </view>
