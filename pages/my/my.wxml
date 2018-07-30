@@ -1,2 +1,37 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class='container common-style' catchtouchmove='true'>
+  <view class='top'>
+    <view class='user-head-img'>
+      <image src='../img/my/default_head.png' />
+    </view>
+    <view class='user-info-view'>
+        <block wx:if='{{isLogin}}'>
+        <text>心想事成</text>
+      </block>
+      <block wx:else>  
+        <text catchtap='loginClick'>登录/</text>
+        <text catchtap='registerClick'>注册</text>
+        </block>  
+    </view>
+  </view>
+   <view class='body'>
+    <view class='my-operation'>
+      <image src='../img/my/my-order.png' />
+      <text class='my-title'>我的订单</text>
+      <text class='my-symbol'>></text>
+    </view>
+    <view class='my-operation'>
+      <image src='../img/my/my-info.png' />
+      <text class='my-title'>我的信息</text>
+      <text class='my-symbol'>></text>
+    </view>
+    <view class='my-operation'>
+      <image src='../img/my/contact-way.png' />
+      <text class='team-title'>联系我们</text>
+      <text class='team-phone'>123-456-890-1</text>
+      <text decode='true' class='team-symbol'>9:00-23:00</text>
+    </view>
+    <view class='logout-view'>
+      <text>退出账户</text>
+    </view>
+  </view> 
+</view>

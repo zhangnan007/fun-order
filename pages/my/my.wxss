@@ -1,1 +1,133 @@
-/* pages/my/my.wxss */
+.common-style {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  font-size: 32rpx;
+  overflow-y: hidden;
+  background: white;
+  background: #d3d3d3;
+}
+
+.top {
+  position: absolute;
+  width: 100%;
+  height: 18%;
+  background: black;
+}
+
+.body {
+  position: absolute;
+  top: 19%;
+  width: 100%;
+  height: 81%;
+}
+
+.user-head-img {
+  float: left;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-head-img > image {
+  width: 60%;
+  height: 53%;
+  border: 0 solid #f00;
+  border-radius: 100rpx;
+}
+
+.user-info-view {
+  float: left;
+  margin-left: 20px;
+  width: 40%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 25px;
+}
+
+.my-operation {
+  width: 100%;
+  height: 10%;
+  background: white;
+  border-bottom: 1px #d3d3d3 solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.my-operation > image {
+  width: 8%;
+  height: 66%;
+  margin-left: 7px;
+}
+
+.my-title {
+  width: 80%;
+  height: 66%;
+  color: #8a8a8a;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.my-symbol {
+  float: right;
+  height: 66%;
+  color: #8a8a8a;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.team-title {
+  height: 66%;
+  width: 18%;
+  color: #8a8a8a;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.team-phone {
+  height: 66%;
+  width: 46%;
+  font-size: 13px;
+  color: red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.team-symbol {
+  height: 66%;
+  width: 18%;
+  font-size: 13px;
+  color: #8a8a8a;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.logout-view{
+  height: 7%;
+  background: white;
+  border-top: 5px #d3d3d3 solid;
+  border-bottom: 5px #d3d3d3 solid;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
