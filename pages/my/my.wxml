@@ -1,7 +1,7 @@
 <view class='container common-style' catchtouchmove='true'>
   <view class='top'>
     <view class='user-head-img'>
-      <image src='../img/my/default_head.png' />
+      <image src='../img/my/defaultHead.png' />
     </view>
     <view class='user-info-view'>
         <block wx:if='{{isLogin}}'>
@@ -15,17 +15,17 @@
   </view>
    <view class='body'>
     <view class='my-operation'>
-      <image src='../img/my/my-order.png' />
+      <image src='../img/my/myOrder.png' />
       <text class='my-title'>我的订单</text>
       <text class='my-symbol'>></text>
     </view>
     <view class='my-operation'>
-      <image src='../img/my/my-info.png' />
+      <image src='../img/my/myInfo.png' />
       <text class='my-title'>我的信息</text>
       <text class='my-symbol'>></text>
     </view>
     <view class='my-operation'>
-      <image src='../img/my/contact-way.png' />
+      <image src='../img/my/contactWay.png' />
       <text class='team-title'>联系我们</text>
       <text class='team-phone'>123-456-890-1</text>
       <text decode='true' class='team-symbol'>9:00-23:00</text>
