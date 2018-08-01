@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/register/register",
+    "pages/login/login",
+    "pages/retrievePwd/retrievePwd",
     "pages/my/my",
     "pages/order/order",
     "pages/menu/menu",
