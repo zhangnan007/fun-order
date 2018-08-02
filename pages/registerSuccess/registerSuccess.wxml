@@ -1,0 +1,7 @@
+<view class='container common-style' catchtouchmove='true'>
+  <text class='tips-text'>恭喜您，注册成功!</text>
+  <view class='tips-view'>
+    <image src='../img/my/registerSuccess.png' />
+  </view>
+  <text class='login'>微信授权并登陆</text>
+</view>

@@ -19,7 +19,8 @@
   flex-direction: row;
   justify-content: center;
 }
-.top{
+
+.top {
   position: absolute;
   top: 1%;
   width: 100%;
@@ -29,21 +30,26 @@
   justify-content: center;
   align-items: center;
 }
-.middle{
+
+.middle {
   position: absolute;
   top: 61%;
   width: 100%;
   height: 20%;
-  background: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.bottom{
+
+.bottom {
   position: absolute;
   top: 82%;
   width: 100%;
   height: 10%;
-  background: green;
 }
-.user-info-view{
+
+.user-info-view {
   width: 90%;
   height: 15%;
   background: white;
@@ -54,22 +60,103 @@
   flex-direction: row;
   align-items: center;
 }
-.user-info-view > image{
+
+.user-info-view > image {
   margin-left: 1%;
   width: 10%;
   height: 50%;
 }
-.user-info-view > input{
+
+.user-info-view > input {
   padding-left: 2%;
   margin-left: 1%;
   width: 88%;
   border-left: 1px #d3d3d3 solid;
   color: #707070;
 }
-.user-info-view > text{
+
+.user-info-view > text {
   padding-left: 2%;
   margin-left: 1%;
   width: 88%;
   border-left: 1px #d3d3d3 solid;
   color: #707070;
+}
+
+.sex-info-view {
+  width: 90%;
+  height: 40%;
+  color: #707070;
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sex-title {
+  height: 98%;
+  float: left;
+  margin-left: 1%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sex-radio-group {
+  width: 70%;
+  height: 98%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sex-radio-group > radio {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.protocol-view {
+  margin-top: 2%;
+  width: 90%;
+  height: 60%;
+}
+
+.isagreed-view {
+  width: 100%;
+  height: 50%;
+  margin-left: 1%;
+}
+
+.isagreed-text {
+  margin-left: 4%;
+  color: #707070;
+  font-size: 16px;
+}
+
+.user-protocol {
+  width: 90%;
+  height: 58%;
+  margin-left: 1%;
+  color: red;
+  font-weight: bold;
+}
+
+.user-protocol > text {
+  height: 98%;
+  width: 50%;
+  margin-left: 10%;
+}
+
+.bottom > text {
+  height: 95%;
+  width: 90%;
+  border: 0 solid #f00;
+  border-radius: 10rpx;
+  background: red;
+  color: white;
+  font-size: 29px;
 }

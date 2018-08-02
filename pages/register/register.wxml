@@ -26,27 +26,29 @@
     </view>
   </view>
   <view class='middle'>
-    <view>
-      <text>性别：</text>
-      <radio-group>
+    <view class='sex-info-view'>
+      <text class='sex-title'>性别：</text>
+      <radio-group class='sex-radio-group'>
         <radio value='male' color='red' checked='true' />
         <text>男</text>
-        <radio value='female' color='red' />
+        <radio style='margin-left: 20px;' value='female' color='red' />
         <text>女</text>
       </radio-group>
     </view>
-    <view>
-      <view>
+    <view class='protocol-view'>
+      <view class='isagreed-view'>
         <checkbox-group>
           <checkbox value='true' color='red' />
-          <text>同意注册使用条款</text>
+          <text class='isagreed-text'>同意注册使用条款</text>
         </checkbox-group>
       </view>
-      <text>用户协议</text>
-      <text>隐私条款</text>
+       <view class='user-protocol'> 
+        <text>用户协议</text>
+        <text>隐私条款</text>
+       </view> 
     </view>
   </view>
-  <view class='bottom'>
-    <text>立即注册</text>
-  </view>
+   <view class='bottom center'>
+    <text class='center'>立即注册</text>
+  </view> 
 </view>

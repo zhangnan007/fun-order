@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/registerSuccess/registerSuccess",
     "pages/register/register",
     "pages/login/login",
     "pages/retrievePwd/retrievePwd",
