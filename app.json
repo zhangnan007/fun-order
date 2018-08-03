@@ -1,9 +1,9 @@
 {
   "pages":[
-    "pages/registerSuccess/registerSuccess",
-    "pages/register/register",
+    "pages/resetPwd/resetPwd",
     "pages/login/login",
-    "pages/retrievePwd/retrievePwd",
+    "pages/register/register",
+    "pages/registerSuccess/registerSuccess",
     "pages/my/my",
     "pages/order/order",
     "pages/menu/menu",

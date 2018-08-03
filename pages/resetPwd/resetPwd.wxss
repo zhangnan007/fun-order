@@ -37,9 +37,24 @@
   width: 40%;
 }
 
-.middle {
+.mobile {
+  top: 27%;
+}
+
+.pwd {
+  top: 34%;
+}
+
+.confirm-pwd {
+  top: 41%;
+}
+
+.auth-code {
+  top: 48%;
+}
+
+.input-view {
   position: absolute;
-  top: 26%;
   width: 80%;
   height: 6%;
   background: white;
@@ -47,13 +62,13 @@
   border-radius: 10rpx;
 }
 
-.middle > image {
+.input-view > image {
   float: left;
   width: 8%;
   height: 56%;
 }
 
-.middle > input {
+.input-view > input {
   padding-left: 2%;
   margin-left: 1%;
   width: 80%;
@@ -61,46 +76,21 @@
   color: #707070;
 }
 
-.bottom {
+text {
   position: absolute;
-  top: 33%;
-  width: 80%;
-  height: 6%;
-  background: white;
-  border: 0 solid #f00;
-  border-radius: 10rpx;
-}
-
-.bottom > image {
-  float: left;
-  width: 8%;
-  height: 56%;
-}
-
-.bottom > input {
-  padding-left: 2%;
-  margin-left: 1%;
-  width: 80%;
-  border-left: 1px #d3d3d3 solid;
-  color: #707070;
-}
-
-.forget-pwd {
-  position: absolute;
-  top: 39%;
-  width: 78%;
+  top: 54%;
+  width: 77%;
   height: 6%;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   color: red;
-  font-size: 15px;
   font-weight: bold;
 }
 
 .last-button {
   position: absolute;
-  top: 46%;
+  top: 62%;
   width: 80%;
   height: 6%;
   background: red;

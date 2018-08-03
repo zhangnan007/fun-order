@@ -6,11 +6,11 @@
     </view>
     <view class='user-info-view'>
       <image src='../img/my/mobile.png' />
-      <input maxlength='18' type='number' placeholder='手机号' />
+      <input maxlength='11' type='number' placeholder='手机号' />
     </view>
     <view class='user-info-view'>
       <image src='../img/my/authCode.png' />
-      <input maxlength='8' type='number' placeholder='手机验证码' placeholder-class='color:#707070' />
+      <input maxlength='6' type='number' placeholder='手机验证码' placeholder-class='color:#707070' />
     </view>
     <view class='user-info-view'>
       <image src='../img/my/nickName.png' />

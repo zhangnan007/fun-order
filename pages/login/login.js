@@ -7,7 +7,15 @@ Page({
   data: {
   
   },
-
+  /**
+   * 忘记密码点击事件
+   */
+  forgetPwdClick:function(event){
+    wx.showModal({
+      title:"提示",
+      content:"忘记密码"
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

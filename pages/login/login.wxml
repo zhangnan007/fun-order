@@ -1,2 +1,15 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+<view class='container common-style' catchtouchmove='true'>
+  <view class='top'>
+    <image src='../img/my/login.png' />
+  </view>
+  <view class='middle center'>
+    <image src='../img/my/mobile.png' />
+    <input placeholder='请输入手机号' maxlength='11' type='number' />
+  </view>
+  <view class='bottom center'>
+    <image src='../img/my/pwd.png' />
+    <input placeholder='请输入登录密码' maxlength='25' password='true' />
+  </view>
+  <text class='forget-pwd' catchtap='forgetPwdClick'>忘记密码？</text>
+  <text class='last-button center'>微信授权登录</text>
+</view>

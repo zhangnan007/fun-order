@@ -1,4 +1,4 @@
-// pages/retrievePwd/retrievePwd.js
+// pages/resetPwd/resetPwd.js
 Page({
 
   /**

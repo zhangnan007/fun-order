@@ -1,0 +1,23 @@
+<view class='container common-style' catchtouchmove='true'>
+  <view class='top'>
+    <image src='../img/my/changePwd.png' />
+  </view>
+  <view class='mobile input-view center'>
+    <image src='../img/my/mobile.png' />
+    <input placeholder='输入手机号' maxlength='11' type='number' />
+  </view>
+  <view class='pwd input-view center'>
+    <image src='../img/my/pwd.png' />
+    <input placeholder='输入新登录密码' maxlength='25' password='true' />
+  </view>
+  <view class='confirm-pwd input-view center'>
+    <image src='../img/my/pwd.png' />
+    <input placeholder='确认新登录密码' maxlength='25' password='true' />
+  </view>
+  <view class='auth-code input-view center'>
+    <image src='../img/my/authCode.png' />
+    <input placeholder='输入手机验证码' maxlength='25' password='true' />
+  </view>
+    <text>点我获取验证码</text>
+   <text class='last-button center'>提交</text> 
+</view>
