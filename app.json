@@ -1,11 +1,11 @@
 {
   "pages":[
+    "pages/order/order",
+    "pages/register/register",
     "pages/resetPwd/resetPwd",
     "pages/login/login",
-    "pages/register/register",
     "pages/registerSuccess/registerSuccess",
     "pages/my/my",
-    "pages/order/order",
     "pages/menu/menu",
     "pages/orderDetail/orderDetail",
     "pages/pay/pay",

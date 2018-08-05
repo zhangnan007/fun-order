@@ -63,34 +63,43 @@
 }
 
 .input-view > image {
-  float: left;
   width: 8%;
   height: 56%;
 }
 
-.input-view > input {
+.input {
   padding-left: 2%;
   margin-left: 1%;
-  width: 80%;
+  width: 87%;
   border-left: 1px #d3d3d3 solid;
   color: #707070;
 }
 
-text {
-  position: absolute;
-  top: 54%;
-  width: 77%;
-  height: 6%;
+.auth-code-input {
+  padding-left: 2%;
+  margin-left: 1%;
+  width: 61%;
+  border-left: 1px #d3d3d3 solid;
+  color: #707070;
+}
+
+.get-auth-code {
+  width: 26%;
+  height: 80%;
+  font-size: 13px;
+  color: #707070;
+  background: #d3d3d3;
+  border: 0 solid #f00;
+  border-radius: 10rpx;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  color: red;
-  font-weight: bold;
+  justify-content: center;
+  align-items: center;
 }
 
 .last-button {
   position: absolute;
-  top: 62%;
+  top: 59%;
   width: 80%;
   height: 6%;
   background: red;

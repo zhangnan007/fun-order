@@ -67,7 +67,7 @@
   height: 50%;
 }
 
-.user-info-view > input {
+.input {
   padding-left: 2%;
   margin-left: 1%;
   width: 88%;
@@ -75,7 +75,28 @@
   color: #707070;
 }
 
-.user-info-view > text {
+.auth-code-input {
+  padding-left: 2%;
+  margin-left: 1%;
+  width: 55%;
+  border-left: 1px #d3d3d3 solid;
+  color: #707070;
+}
+
+.get-auth-code {
+  width: 28%;
+  height: 60%;
+  font-size: 13px;
+  border: 0 solid #f00;
+  border-radius: 10rpx;
+  background: #d3d3d3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
   padding-left: 2%;
   margin-left: 1%;
   width: 88%;

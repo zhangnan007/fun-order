@@ -22,7 +22,7 @@
                 </view>
                 <view class='operation-view'>
                 <text class='order-status'>订单状态：{{item.status}}</text>
-                  <text decode='true' class='order-again'>再来一单&nbsp;&nbsp;></text>
+                  <text decode='true' class='order-again'>订单详情&nbsp;&nbsp;></text>
                 </view>
               </view>
             </block>
