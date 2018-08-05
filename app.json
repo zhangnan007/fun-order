@@ -1,17 +1,17 @@
 {
   "pages":[
-    "pages/order/order",
-    "pages/register/register",
-    "pages/resetPwd/resetPwd",
-    "pages/login/login",
-    "pages/registerSuccess/registerSuccess",
-    "pages/my/my",
-    "pages/menu/menu",
-    "pages/orderDetail/orderDetail",
-    "pages/pay/pay",
     "pages/index/index",
+    "pages/seach/seach",
+    "pages/my/my",
+    "pages/register/register",
+    "pages/registerSuccess/registerSuccess",
+    "pages/login/login",
+    "pages/resetPwd/resetPwd",
+    "pages/menu/menu",
+    "pages/pay/pay",
     "pages/foodRemark/foodRemark",
-    "pages/seach/seach"
+    "pages/order/order",
+    "pages/orderDetail/orderDetail"
   ],
   "window":{
     "navigationBarTitleText": "自助点餐",
